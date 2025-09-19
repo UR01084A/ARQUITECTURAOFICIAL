@@ -4,7 +4,160 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Inicio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a, nav button {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav button:hover {
+      color: #f39c12;
+    }
+
+    /* Sección Home: Grid 3 columnas */
+    .home-grid {
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Columna presentación */
+    .col-presentacion h1 {
+      font-size: 2rem;
+      color: #1e1e2f;
+    }
+
+    .col-presentacion h1 span {
+      color: #f39c12;
+    }
+
+    .col-presentacion p {
+      margin-top: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Columna foto circular */
+    .foto-estudiante {
+      width: 100%;
+      max-width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      border: 4px solid #f39c12;
+      transition: transform 0.3s;
+    }
+
+    .foto-estudiante:hover {
+      transform: scale(1.05);
+    }
+
+    /* Columna login */
+    .login-box {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      text-align: center;
+    }
+
+    .login-box input {
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .login-box button {
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: none;
+      background: #1e1e2f;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    .login-box button:hover {
+      background: #f39c12;
+    }
+
+    #loginMsg {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e1e2f;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .home-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .col-login {
+        justify-content: center;
+      }
+
+      .foto-estudiante {
+        max-width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,39 +172,68 @@
       <button id="btnLogoutMenu" onclick="logout()" style="display:none">Cerrar Sesión</button>
     </nav>
   </header>
-<section id="home" class="home-grid">
 
-  <!-- Columna 2: Foto -->
-  <div>
-    <img src="img/estudiante.jpeg" alt="Foto de William" class="foto-estudiante">
-  </div>
-
-  <!-- Columna 1: Presentación -->
-  <div class="col-presentacion">
-    <h1>Hola, soy <span>William Mario Lázaro Iguavel</span></h1>
-    <p>
-      Soy estudiante de Ingeniería de Sistemas y Computación, con una marcada pasión por el desarrollo web y las nuevas tecnologías. 
-      Me considero una persona curiosa y en constante aprendizaje, siempre buscando mejorar mis habilidades en programación, diseño de software y solución de problemas tecnológicos.
-    </p>
-  </div>
-
-  <!-- Columna 3: Login Admin -->
-  <div class="col-login">
-    <div class="login-box" id="loginBox">
-      <h2>Acceso Admin</h2>
-      <input type="text" id="usuario" placeholder="Usuario">
-      <input type="password" id="password" placeholder="Contraseña">
-      <button onclick="login()">Ingresar</button>
-      <p id="loginMsg"></p>
+  <section id="home" class="home-grid">
+    <!-- Columna 2: Foto -->
+    <div>
+      <img src="img/estudiante.jpeg" alt="Foto de William" class="foto-estudiante">
     </div>
-  </div>
 
-</section>
+    <!-- Columna 1: Presentación -->
+    <div class="col-presentacion">
+      <h1>Hola, soy <span>William Mario Lázaro Iguavel</span></h1>
+      <p>
+        Soy estudiante de Ingeniería de Sistemas y Computación, con pasión por el desarrollo web y nuevas tecnologías. 
+        Me considero curioso y en constante aprendizaje, buscando mejorar habilidades en programación, diseño de software y solución de problemas tecnológicos.
+      </p>
+    </div>
 
+    <!-- Columna 3: Login Admin -->
+    <div class="col-login">
+      <div class="login-box" id="loginBox">
+        <h2>Acceso Admin</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Ingresar</button>
+        <p id="loginMsg"></p>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 William Mario Lázaro Iguavel | Diseñado en HTML, CSS y JS</p>
   </footer>
+
+  <script>
+    // Funciones básicas de login
+    function login() {
+      const user = document.getElementById("usuario").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("loginMsg");
+
+      if(user === "admin" && pass === "admin123") {
+        msg.style.color = "green";
+        msg.textContent = "¡Ingreso exitoso!";
+        document.getElementById("btnLoginMenu").style.display = "none";
+        document.getElementById("btnLogoutMenu").style.display = "inline-block";
+        document.getElementById("loginBox").style.display = "none";
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Usuario o contraseña incorrectos";
+      }
+    }
+
+    function logout() {
+      document.getElementById("btnLoginMenu").style.display = "inline-block";
+      document.getElementById("btnLogoutMenu").style.display = "none";
+    }
+
+    function mostrarLogin() {
+      document.getElementById("loginBox").style.display = "flex";
+    }
+  </script>
+</body>
+</html>
 
   <script src="js/script.js"></script>
 </body>
