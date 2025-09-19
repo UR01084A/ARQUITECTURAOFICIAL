@@ -4,7 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Educación</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    /* Main / Sección educación */
+    main, section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #education h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #1e1e2f;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 3px solid #1e1e2f;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 20px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #f39c12;
+      border-radius: 50%;
+      border: 3px solid #1e1e2f;
+    }
+
+    .timeline-item h3 {
+      margin: 0;
+      color: #1e1e2f;
+    }
+
+    .timeline-item p {
+      margin: 0.3rem 0 0 0;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e1e2f;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.5rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.3rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,12 +130,14 @@
     <h2>Educación</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <h3>Universidad X</h3>
-        <p>Ingeniería de Sistemas - 2018/2022</p>
+        <h3>Universidad Peruana los Andes</h3>
+        <p>Ingeniería de Sistemas y Computación - 2022 / Presente</p>
+        <p>Participación en proyectos de desarrollo de software, bases de datos y aplicaciones web.</p>
       </div>
       <div class="timeline-item">
-        <h3>Cursos Online</h3>
-        <p>Certificaciones en Desarrollo Web y UX</p>
+        <h3>Cursos</h3>
+        <p>Certificaciones en Desarrollo Web y UX/UI</p>
+        <p>Aprendizaje práctico de HTML, CSS, JavaScript, Node.js y diseño de interfaces centradas en el usuario.</p>
       </div>
     </div>
   </section>
