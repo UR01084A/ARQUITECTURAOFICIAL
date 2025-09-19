@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h2 class="logo">Mi Portafolio</h2>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="educacion.html">Educación</a>
+      <a href="trabajos.html">Trabajos</a>
+      <a href="contacto.html">Contacto</a>
+      <button id="btnLoginMenu" onclick="mostrarLogin()">Ingresar</button>
+      <button id="btnLogoutMenu" onclick="logout()" style="display:none">Cerrar Sesión</button>
+    </nav>
+  </header>
+<section id="home" class="home-grid">
+
+  <!-- Columna 2: Foto -->
+  <div>
+    <img src="img/estudiante.jpeg" alt="Foto de William" class="foto-estudiante">
+  </div>
+
+  <!-- Columna 1: Presentación -->
+  <div class="col-presentacion">
+    <h1>Hola, soy <span>William Mario Lázaro Iguavel</span></h1>
+    <p>
+      Soy estudiante de Ingeniería de Sistemas y Computación, con una marcada pasión por el desarrollo web y las nuevas tecnologías. 
+      Me considero una persona curiosa y en constante aprendizaje, siempre buscando mejorar mis habilidades en programación, diseño de software y solución de problemas tecnológicos.
+    </p>
+  </div>
+
+  <!-- Columna 3: Login Admin -->
+  <div class="col-login">
+    <div class="login-box" id="loginBox">
+      <h2>Acceso Admin</h2>
+      <input type="text" id="usuario" placeholder="Usuario">
+      <input type="password" id="password" placeholder="Contraseña">
+      <button onclick="login()">Ingresar</button>
+      <p id="loginMsg"></p>
+    </div>
+  </div>
+
+</section>
+
+
+  <footer>
+    <p>© 2025 William Mario Lázaro Iguavel | Diseñado en HTML, CSS y JS</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

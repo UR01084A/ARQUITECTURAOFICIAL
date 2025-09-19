@@ -1,0 +1,315 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background: #222;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  margin: 0;
+}
+
+nav a, nav button {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+nav a:hover, nav button:hover {
+  text-decoration: underline;
+}
+
+.home-grid, .trabajos-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Inicio 3 columnas */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Columna presentación */
+.col-presentacion h1 span {
+  color: #0077cc;
+}
+
+.col-presentacion p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Columna foto */
+.foto-estudiante {
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid #0077cc;
+}
+
+/* Login */
+.login-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.login-box input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-box button:hover {
+  background: #005fa3;
+}
+
+/* Grid de trabajos */
+.trabajos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+.trabajo-card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.trabajo-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.trabajo-card a {
+  display: block;
+  margin: 8px 0;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.trabajo-card button {
+  margin: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.trabajo-card button:nth-child(2) { background: #ffc107; color: black; }
+.trabajo-card button:nth-child(3) { background: #dc3545; color: white; }
+.trabajo-card button:hover { opacity: 0.9; }
+
+/* Formulario subir trabajo */
+#uploadForm {
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+#uploadForm input, #uploadForm button {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#uploadForm button {
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#uploadForm button:hover {
+  background: #218838;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  .foto-estudiante {
+    width: 150px;
+  }
+  .login-box {
+    width: 100%;
+    max-width: 300px;
+  }
+  .trabajos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Contenedor principal */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Foto - Presentación - Login */
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f6f9, #e8ecf3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Foto del estudiante */
+.foto-estudiante {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  margin: auto;
+  display: block;
+}
+
+/* Columna de presentación */
+.col-presentacion h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.col-presentacion h1 span {
+  color: #0077cc; /* Color destacado */
+}
+
+.col-presentacion p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+/* Columna de login */
+.col-login {
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-box h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  background: #0077cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #005fa3;
+}
+
+#loginMsg {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: red;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .foto-estudiante {
+    margin-bottom: 2rem;
+  }
+
+  .col-login {
+    margin-top: 2rem;
+  }
+}

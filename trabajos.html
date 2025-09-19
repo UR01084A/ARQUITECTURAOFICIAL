@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Trabajos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h2 class="logo">Mis Trabajos</h2>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="educacion.html">Educación</a>
+      <a href="trabajos.html">Trabajos</a>
+      <a href="contacto.html">Contacto</a>
+      <button id="btnLoginMenu" onclick="mostrarLogin()">Ingresar</button>
+      <button id="btnLogoutMenu" onclick="logout()" style="display:none">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <section class="trabajos-section">
+    <h1>Proyectos Realizados</h1>
+
+    <div id="trabajosList" class="trabajos-grid"></div>
+
+    <form id="uploadForm" style="display:none" onsubmit="event.preventDefault(); subirTrabajo();">
+      <input type="text" id="tituloTrabajo" placeholder="Título del trabajo">
+      <input type="file" id="archivoTrabajo">
+      <button type="submit">Subir Trabajo</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 William Mario Lázaro Iguavel | Diseñado en HTML, CSS y JS</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
