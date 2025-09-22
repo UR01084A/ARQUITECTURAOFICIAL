@@ -3,159 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Habilidades</title>
-  <style>
-    /* Estilos generales */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #f4f4f9;
-      color: #333;
-    }
-
-    /* Header */
-    header {
-      background: #1e1e2f;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #f39c12;
-    }
-
-    /* Main */
-    main {
-      padding: 2rem;
-    }
-
-    #skills {
-      text-align: center;
-    }
-
-    #skills h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #1e1e2f;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #1e1e2f;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-      color: #555;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1e1e2f;
-      color: #fff;
-      margin-top: 2rem;
-    }
-
-    /* Responsivo */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 0.5rem;
-      }
-
-      nav a {
-        display: block;
-        margin: 0.3rem 0;
-      }
-    }
-  </style>
+  <title>Portafolio - Habilidades</title>
+  <link rel="stylesheet" href="css/habilidades.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h2 class="logo">Mi Portafolio</h2>
-    <nav>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo UPLA">
+      <h2>UPLA</h2>
+    </div>
+    <nav id="navMenu">
       <a href="index.html">Inicio</a>
-      <a href="habilidades.html">Habilidades</a>
+      <a href="habilidades.html" class="active">Habilidades</a>
       <a href="educacion.html">Educación</a>
       <a href="trabajos.html">Trabajos</a>
       <a href="contacto.html">Contacto</a>
+      <button id="btnLoginMenu" onclick="mostrarLogin()">Ingresar</button>
+      <button id="btnLogoutMenu" onclick="logout()" style="display:none">Cerrar Sesión</button>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <main>
-    <section id="skills">
-      <h2>Habilidades</h2>
-      <div class="skills-grid">
-        <div class="card">
-          <h3>HTML5</h3>
-          <p>Como estudiante de Ingeniería de Sistemas, utilizo HTML5 para construir estructuras web semánticas, accesibles y optimizadas para múltiples dispositivos.</p>
-        </div>
-        <div class="card">
-          <h3>CSS3</h3>
-          <p>Aplico CSS3 para diseñar interfaces modernas y responsivas, incorporando animaciones y transiciones que mejoran la experiencia del usuario.</p>
-        </div>
-        <div class="card">
-          <h3>JavaScript</h3>
-          <p>Desarrollo funcionalidades interactivas en la web, creando aplicaciones dinámicas y experimentando con frameworks y librerías modernas.</p>
-        </div>
-        <div class="card">
-          <h3>Node.js</h3>
-          <p>Estoy aprendiendo a implementar servidores y APIs, gestionando bases de datos y construyendo aplicaciones backend escalables.</p>
-        </div>
-        <div class="card">
-          <h3>Diseño UX/UI</h3>
-          <p>Diseño interfaces centradas en el usuario, enfocándome en la usabilidad y la estética, aplicando principios aprendidos en mis estudios y proyectos.</p>
-        </div>
+  <!-- Sección Habilidades -->
+  <section class="habilidades-section">
+    <h2>Mis Habilidades</h2>
+    <div class="habilidades-grid">
+      <div class="habilidad">
+        <h3>Desarrollo Web</h3>
+        <p>HTML, CSS, JavaScript, React.js</p>
       </div>
-    </section>
-  </main>
+      <div class="habilidad">
+        <h3>Programación</h3>
+        <p>Java, Python, C#</p>
+      </div>
+      <div class="habilidad">
+        <h3>Bases de Datos</h3>
+        <p>SQL Server, MySQL, PostgreSQL</p>
+      </div>
+      <div class="habilidad">
+        <h3>Diseño UI/UX</h3>
+        <p>Figma, Adobe XD, Prototipado</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Mi Portafolio</p>
+    <p>© 2025 William Mario Lázaro Iguavel | Diseñado en HTML, CSS y JS</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+
+    function mostrarLogin() {
+      alert("Función de login pendiente de implementación");
+    }
+
+    function logout() {
+      alert("Función de logout pendiente de implementación");
+    }
+  </script>
+
 </body>
 </html>
+
 
