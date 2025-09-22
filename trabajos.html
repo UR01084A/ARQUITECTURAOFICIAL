@@ -28,76 +28,79 @@
       <span></span>
       <span></span>
     </div>
+  </header> <h1>📂 Mis Trabajos</h1>
+    <a href="index.html">⬅ Volver al Inicio</a>
   </header>
 
-  <!-- Sección Trabajos -->
-  <section class="trabajos-section">
-    <h2>Proyectos Realizados</h2>
-    <div id="trabajosList" class="trabajos-grid"></div>
+  <main class="contenedor-trabajos">
+    <!-- Trabajo 1 -->
+    <div class="tarjeta">
+      <h3>Informe de Arquitectura</h3>
+      <p>Documento sobre patrones arquitectónicos.</p>
+      <div class="acciones">
+        <a href="archivos/arquitectura.pdf" target="_blank">👁 Ver</a>
+        <a href="archivos/arquitectura.pdf" download>⬇ Descargar</a>
+      </div>
+    </div>
 
-    <form id="uploadForm" style="display:none" onsubmit="event.preventDefault(); subirTrabajo();">
-      <input type="text" id="tituloTrabajo" placeholder="Título del trabajo" required>
-      <input type="file" id="archivoTrabajo" required>
-      <button type="submit">Subir Trabajo</button>
-    </form>
-  </section>
+    <!-- Trabajo 2 -->
+    <div class="tarjeta">
+      <h3>Presentación Redes</h3>
+      <p>Exposición de Packet Tracer.</p>
+      <div class="acciones">
+        <a href="archivos/redes.pptx" target="_blank">👁 Ver</a>
+        <a href="archivos/redes.pptx" download>⬇ Descargar</a>
+      </div>
+    </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 William Mario Lázaro Iguavel | Diseñado en HTML, CSS y JS</p>
-  </footer>
+    <!-- Trabajo 3 -->
+    <div class="tarjeta">
+      <h3>Reporte Investigación</h3>
+      <p>Informe en Word sobre seguridad informática.</p>
+      <div class="acciones">
+        <a href="archivos/investigacion.docx" target="_blank">👁 Ver</a>
+        <a href="archivos/investigacion.docx" download>⬇ Descargar</a>
+      </div>
+    </div>
+  
 
-  <script>
-    function mostrarLogin() {
-      const password = prompt("Ingrese contraseña de administrador:");
-      if(password === "admin123") {
-        document.getElementById("uploadForm").style.display = "flex";
-        document.getElementById("btnLoginMenu").style.display = "none";
-        document.getElementById("btnLogoutMenu").style.display = "inline-block";
-      } else {
-        alert("Contraseña incorrecta");
-      }
-    }
+  <header>
+    <h1>📂 Mis Trabajos</h1>
+    <a href="index.html">⬅ Volver al Inicio</a>
+  </header>
 
-    function logout() {
-      document.getElementById("uploadForm").style.display = "none";
-      document.getElementById("btnLoginMenu").style.display = "inline-block";
-      document.getElementById("btnLogoutMenu").style.display = "none";
-    }
+  <main class="contenedor-trabajos">
+    <!-- Trabajo 1 -->
+    <div class="tarjeta">
+      <h3>SEMANA 01</h3>
+      <p>Fundamentos Arquitectura - Mapa Conceptual</p>
+      <div class="acciones">
+        <a href="archivos/Semana 01_MapaConceptual.pptx" target="_blank">👁 Ver</a>
+        <a href="archivos/Semana 01_MapaConceptual.pptx" download>⬇ Descargar</a>
+      </div>
+    </div>
 
-    const trabajosList = document.getElementById("trabajosList");
-    let trabajos = JSON.parse(localStorage.getItem("trabajos")) || [];
+    <!-- Trabajo 2 -->
+    <div class="tarjeta">
+      <h3>SEMANA 02</h3>
+      <p>Acrividad 01 - Analisis de Estandares</p>
+      <div class="acciones">
+        <a href="archivos/Actividad 1_ Análisis de Estándares en un Proyecto Real  (1).pdf" target="_blank">👁 Ver</a>
+        <a href="archivos/Actividad 1_ Análisis de Estándares en un Proyecto Real  (1).pdf" download>⬇ Descargar</a>
+      </div>
+    </div>
 
-    function mostrarTrabajos() {
-      trabajosList.innerHTML = "";
-      trabajos.forEach((t, index) => {
-        const div = document.createElement("div");
-        div.className = "trabajo-card";
-        div.innerHTML = `
-          <h3>${t.titulo}</h3>
-          <a href="${t.archivo}" download>Descargar</a>
-        `;
-        trabajosList.appendChild(div);
-      });
-    }
+    <!-- Trabajo 3 -->
+    <div class="tarjeta">
+      <h3>Semana 02</h3>
+      <p>Actividad 01 - Actividad 02</p>
+      <div class="acciones">
+        <a href="archivos/Actividad 1_ Análisis de Estándares en un Proyecto Real  (1).pdf" target="_blank">👁 Ver</a>
+        <a href="archivos/Actividad 2 y 3_ Diseño de una Arquitectura Basada en Estándares (Biblioteca Digital) (1).pdf" download>⬇ Descargar</a>
+      </div>
+    </div>
+  </main>
 
-    function subirTrabajo() {
-      const titulo = document.getElementById("tituloTrabajo").value;
-      const archivo = document.getElementById("archivoTrabajo").files[0];
 
-      if(!titulo || !archivo) return alert("Complete todos los campos");
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        trabajos.push({ titulo: titulo, archivo: e.target.result });
-        localStorage.setItem("trabajos", JSON.stringify(trabajos));
-        mostrarTrabajos();
-        document.getElementById("uploadForm").reset();
-      };
-      reader.readAsDataURL(archivo);
-    }
-
-    mostrarTrabajos();
-  </script>
 </body>
 </html>
