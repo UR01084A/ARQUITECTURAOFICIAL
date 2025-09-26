@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Repositorio</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/menuSemana.css" />
+  <link rel="stylesheet" href="css/presentacion.css" />
+</head>
+<body>
+  <div id="page">
+    <!-- Navbar -->
+    <nav class="fh5co-nav" role="navigation">
+      <div class="top-menu container">
+        <div class="nav-content">
+          <div id="fh5co-logo">
+            <a href="index.html">
+              <img src="foto/logo (1).png" alt="Logo Universidad">
+            </a>
+          </div>
+          <ul class="menu-1">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trayectoria.html">Trayectoria</a></li>
+            <li><a href="sobreMi.html">Sobre mi</a></li>
+            <li class="active"><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contenido Login -->
+    <div id="fh5co-contact">
+      <div class="container">
+        <div class="fh5co-heading text-center">
+          <h2>Iniciar Sesión</h2>
+          <p>Accede a tu cuenta para continuar</p>
+        </div>
+
+        <div class="login-box">
+          <form id="loginForm">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Correo" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <div id="errorMessage" class="text-danger"></div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <a href="index.html" class="btn btn-default btn-block">← Volver</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="fh5co-footer" role="contentinfo">
+      <div class="container text-center">
+        <p><small class="block">&copy; 2025 - Universidad</small></p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scroll Top -->
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+  </div>
+
+  <!-- Scripts propios -->
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

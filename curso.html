@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Curso - Portafolio Académico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+
+   <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="fh5co-loader"></div>
+
+  <div id="page">
+    <!-- 🔹 Navegación -->
+    <nav class="fh5co-nav" role="navigation">
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-2">
+              <div id="fh5co-logo">
+                <a href="index.html"><img src="images/logoUPLA.png" alt="Logo"></a>
+              </div>
+            </div>
+            <div class="col-xs-10 text-right menu-1">
+              <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="trayectoria.html">Trayectoria</a></li>
+                <li class="active"><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="sobreMi.html">Sobre mí</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li class="btn-cta"><a href="login.html"><span>Login</span></a></li>
+              </ul>
+            </div>
+          </div>				
+        </div>
+      </div>
+    </nav>
+
+    <!-- 🔹 Hero dinámico -->
+    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/fondo.jpg); height:70vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 animate-box" data-animate-effect="fadeIn">
+            <h1 id="curso-title" class="mb-3">Curso</h1>
+            <h2 class="mb-4">Explora las semanas y materiales</h2>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 🔹 Contenido dinámico -->
+    <div id="fh5co-intro">
+      <div class="container">
+        <div class="row animate-box">
+          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+            <h2 id="curso-subtitle">Material del curso</h2>
+            <p>Aquí encontrarás las semanas con sus respectivos materiales y actividades.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Cards con semanas -->
+    <div id="fh5co-portfolio" class="fh5co-bg-section">
+      <div class="container">
+        <div id="semanas-container" class="row">
+          <!-- JS insertará aquí las cards -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Footer -->
+    <footer id="fh5co-footer" role="contentinfo">
+      <div class="container text-center">
+        <p>&copy; 2025 - Portafolio académico. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+ <script>
+  // 🔹 Datos de cursos y semanas
+  const cursos = {
+    "Arquitectura de Software": {
+      nombre: "Arquitectura de Software",
+      semanas: [
+        { titulo: "Semana 1", descripcion: "Introducción y conceptos básicos" },
+        { titulo: "Semana 2", descripcion: "Patrones de arquitectura" },
+        { titulo: "Semana 3", descripcion: "Estilos de arquitectura" },
+        { titulo: "Semana 4", descripcion: "Arquitectura orientada a servicios" },
+        { titulo: "Semana 5", descripcion: "Microservicios y APIs" },
+        { titulo: "Semana 6", descripcion: "Buenas prácticas y documentación" }
+      ]
+    },
+    "Machine Learning": {
+      nombre: "Machine Learning",
+      semanas: [
+        { titulo: "Semana 1", descripcion: "Introducción al ML" },
+        { titulo: "Semana 2", descripcion: "Algoritmos supervisados" },
+        { titulo: "Semana 3", descripcion: "Redes neuronales" },
+        { titulo: "Semana 4", descripcion: "Algoritmos no supervisados" },
+        { titulo: "Semana 5", descripcion: "Evaluación de modelos" },
+        { titulo: "Semana 6", descripcion: "Aplicaciones prácticas" }
+      ]
+    },
+    "Inglés": {
+      nombre: "Inglés",
+      semanas: [
+        { titulo: "Semana 1", descripcion: "Present simple y vocabulario básico" },
+        { titulo: "Semana 2", descripcion: "Present continuous y listening" },
+        { titulo: "Semana 3", descripcion: "Pasado simple y redacción" },
+        { titulo: "Semana 4", descripcion: "Lectura comprensiva" },
+        { titulo: "Semana 5", descripcion: "Conversación y roleplay" },
+        { titulo: "Semana 6", descripcion: "Examen de práctica" }
+      ]
+    }
+  };
+
+  // 🔹 Normalización de claves para que funcione con alias
+const alias = {
+  "arquitectura": "Arquitectura de Software",
+  "Arquitectura de Software": "Arquitectura de Software",
+  "ml": "Machine Learning",
+  "Machine Learning": "Machine Learning",
+  "ingles": "Inglés",
+  "Inglés": "Inglés"
+};
+
+// Leer parámetro de URL (?curso=...)
+const params = new URLSearchParams(window.location.search);
+let cursoId = params.get("curso");
+
+// Normalizar clave
+if (cursoId && alias[cursoId]) {
+  cursoId = alias[cursoId];
+  const curso = cursos[cursoId];
+
+  document.getElementById("curso-title").textContent = curso.nombre;
+  document.getElementById("curso-subtitle").textContent = `Material del curso: ${curso.nombre}`;
+
+  const container = document.getElementById("semanas-container");
+
+  curso.semanas.forEach((semana, index) => {
+    const numSemana = index + 1;
+    const card = document.createElement("div");
+    card.className = "col-md-4 col-sm-6 text-center animate-box";
+    card.innerHTML = `
+      <div class="feature-center">
+        <span class="icon"><i class="icon-book"></i></span>
+        <h3>${semana.titulo}</h3>
+        <p>${semana.descripcion}</p>
+        <p>
+          <a href="semana.html?curso=${encodeURIComponent(curso.nombre)}&semana=${numSemana}" class="btn btn-default">
+            Ver Material
+          </a>
+        </p>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+} else {
+  document.getElementById("curso-title").textContent = "Curso no encontrado";
+}
+
+
+  // 🔹 Loader
+  window.addEventListener('load', function () {
+    var loader = document.querySelector('.fh5co-loader');
+    if (loader) {
+      loader.style.transition = 'opacity 0.5s ease';
+      loader.style.opacity = '0';
+      setTimeout(function () { loader.style.display = 'none'; }, 600);
+    }
+  });
+</script>
+
+
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/magnific-popup-options.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
+

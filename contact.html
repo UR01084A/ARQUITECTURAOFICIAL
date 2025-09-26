@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Contacto Animado - Portafolio Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Fuente -->
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    background: linear-gradient(135deg, #120449, #f7d794);
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color: rgba(26,26,26,0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdd59;
+}
+
+nav .btn-cta a {
+    background-color: #06000d;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav .btn-cta a:hover {
+    background-color: #180337;
+}
+
+/* Sección Contacto */
+#fh5co-contact {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#fh5co-contact h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+#fh5co-contact p {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Cards con animación */
+.contact-info, .contact-form {
+    background-color: rgba(255,255,255,0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    flex: 1 1 350px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.contact-info.visible, .contact-form.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-info:hover, .contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.contact-info h3, .contact-form h3 {
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+/* Contact Info */
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info ul li {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.contact-info ul li i {
+    color: #030113;
+    font-size: 1.3rem;
+}
+
+/* Formulario animado */
+.contact-form .input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem 1rem 1.2rem 3rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1b042d;
+    box-shadow: 0 0 10px rgba(255,107,107,0.4);
+}
+
+.contact-form .input-group i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #020526;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    color: transparent;
+}
+
+/* Botón animado */
+.contact-form input[type="button"] {
+    background-color: #180101;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.5s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-form input[type="button"]:hover {
+    background-color: #0a0101;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(26,26,26,0.9);
+    color: #fff;
+    margin-top: 3rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/* Animación CSS para scroll */
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="index.html"><img src="foto/logo (1).png" alt="Logo Universidad"></a>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="trayectoria.html">Trayectoria</a></li>
+        <li><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="sobreMi.html">Sobre mí</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <div class="btn-cta"><a href="login.html">Login</a></div>
+</nav>
+
+<!-- Sección Contacto -->
+<section id="fh5co-contact">
+    <h2>Contacto Animado</h2>
+    <p>Completa el siguiente formulario para comunicarte conmigo.</p>
+
+    <div class="contact-container">
+
+        <!-- Información -->
+        <div class="contact-info">
+            <h3>Información de contacto</h3>
+            <ul>
+                
+                <li><i class="fas fa-phone-alt"></i> +51 916 096 729</li>
+                <li><i class="fas fa-envelope"></i><a href="mailto:r01084a@ms.upla.edu.pe"> r01084a@ms.upla.edu.pe</a></li>
+				<li><i class="fas fa-map-marker-alt"></i> Huancayo, Junín - Perú</li>
+                
+            </ul>
+        </div>
+
+        <!-- Formulario -->
+        <div class="contact-form">
+            <h3>Escríbeme un mensaje</h3>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Nombre">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Correo electrónico">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-comment"></i>
+                <textarea placeholder="Mensaje"></textarea>
+            </div>
+            <input type="button" value="Enviar mensaje">
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 - Portafolio personal. Todos los derechos reservados.
+</footer>
+
+<script>
+    // Animación scroll CSS sin librerías
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.contact-info, .contact-form').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
