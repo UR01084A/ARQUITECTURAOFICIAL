@@ -1,0 +1,173 @@
+/* ===========================
+   HERO MEJORADO
+=========================== */
+#fh5co-header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* CENTRADO HORIZONTAL */
+  text-align: center;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+#fh5co-header .overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));
+  z-index: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Texto del Hero */
+.hero-inner h1.typing-text {
+  font-family: var(--font-secondary);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 1px;
+}
+
+.hero-inner h2.subheading {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.4;
+  max-width: 700px;
+}
+
+/* Botones HERO */
+.hero-inner p {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary.btn-gradient {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+  color: #fff;
+  padding: 0.75rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform var(--transition), box-shadow var(--transition), filter 0.3s;
+}
+.btn-primary.btn-gradient:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  filter: brightness(1.05);
+}
+
+.btn-ghost {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.btn-ghost:hover {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* FOTO + RING + BLOB */
+.hero-visual {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.photo-frame {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 170px;
+  height: 170px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.mi-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+}
+
+.mi-foto:hover {
+  transform: scale(1.08);
+}
+
+.photo-ring {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  animation: ring-spin 6s linear infinite;
+}
+
+@keyframes ring-spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+/* SVG BLOBS detrás de la foto */
+.blob {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(243,156,18,0.25), rgba(241,196,15,0));
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+  top: -15px;
+  left: -15px;
+  animation: blobMove 8s ease-in-out infinite;
+}
+
+@keyframes blobMove {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  25% { transform: translate(10px, 5px) scale(1.05); }
+  50% { transform: translate(-10px, -5px) scale(1.1); }
+  75% { transform: translate(5px, 10px) scale(1.05); }
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 992px) {
+  .hero-inner h1.typing-text { font-size: 2.4rem; }
+  .hero-inner h2.subheading { font-size: 1.3rem; max-width: 90%; }
+  .photo-frame { width: 150px; height: 150px; }
+  .blob { width: 180px; height: 180px; top: -10px; left: -10px; }
+}
+
+@media (max-width: 576px) {
+  .hero-inner h1.typing-text { font-size: 1.8rem; }
+  .hero-inner h2.subheading { font-size: 1.1rem; }
+  .photo-frame { width: 130px; height: 130px; }
+  .blob { width: 150px; height: 150px; top: -8px; left: -8px; }
+  .hero-inner p { flex-direction: column; gap: 0.8rem; }
+}

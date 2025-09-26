@@ -1,0 +1,156 @@
+/* ===== Reset básico ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inconsolata', monospace;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Navegación ===== */
+.fh5co-nav {
+  background: #1e2a38;
+  padding: 10px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu ul li {
+  margin-left: 20px;
+  position: relative;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover,
+.menu ul li.active a {
+  color: #ffca28;
+}
+
+/* Dropdown */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background: #2e3b4e;
+  padding: 10px 0;
+  top: 100%;
+  left: 0;
+  border-radius: 6px;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 8px 20px;
+  color: #fff;
+}
+
+.dropdown li a:hover {
+  background: #ffca28;
+  color: #1e2a38;
+}
+
+/* Botón Login */
+.btn-cta a {
+  background: #ffca28;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #1e2a38 !important;
+  transition: background 0.3s;
+}
+
+.btn-cta a:hover {
+  background: #ffc107;
+}
+
+/* ===== Contenido ===== */
+#fh5co-about {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.fh5co-heading h2 {
+  font-size: 2.5em;
+  color: #1e2a38;
+  margin-bottom: 20px;
+}
+
+.heading-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #1e2a38;
+}
+
+#fh5co-about p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.perfil-img {
+  max-width: 350px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Footer ===== */
+#fh5co-footer {
+  background: #1e2a38;
+  color: #ccc;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+#fh5co-footer small {
+  color: #aaa;
+}
+
+/* ===== Botón Ir Arriba ===== */
+.gototop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #ffca28;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.gototop a {
+  color: #1e2a38;
+  font-size: 20px;
+}

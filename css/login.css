@@ -1,0 +1,351 @@
+/* ============================
+   RESET Y FUENTES
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================
+   NAVBAR MODERNA
+============================ */
+.fh5co-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 15px 0;
+}
+
+.fh5co-nav.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.fh5co-nav a {
+  color: #660c0c;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.fh5co-nav a:hover,
+.fh5co-nav .active a {
+  color: #2575fc;
+  transform: scale(1.1);
+}
+
+#fh5co-logo img {
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+#fh5co-logo img:hover {
+  transform: scale(1.05);
+}
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================
+   LOGIN FORM MODERNO
+============================ */
+#fh5co-contact {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 60px 20px;
+}
+
+.fh5co-heading h2 {
+  color: #4f0d0d;
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 5px rgba(252, 15, 15, 0.896);
+  text-align: center;
+}
+
+.fh5co-heading p {
+  color: #120202;
+  font-size: 18px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 450px;
+}
+
+form {
+  background: rgba(18, 1, 56, 0.95);
+  padding: 45px 35px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #2575fc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.6);
+}
+
+/* ============================
+   BOTONES MODERNOS
+============================ */
+.btn {
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: #2575fc;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #6a11cb;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106,17,203,0.4);
+}
+
+.btn-default {
+  background: #ccc;
+  color: #333;
+  border: none;
+}
+
+.btn-default:hover {
+  background: #999;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   MENSAJE DE ERROR
+============================ */
+.text-danger {
+  font-size: 14px;
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* ============================
+   FOOTER MODERNO
+============================ */
+#fh5co-footer {
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+#fh5co-footer small {
+  color: #ccc;
+}
+
+/* ============================
+   SCROLL TOP
+============================ */
+.gototop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  z-index: 9999;
+}
+
+.gototop a {
+  background: #2575fc;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.gototop a:hover {
+  background: #6a11cb;
+  transform: translateY(-3px);
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+  .col-md-6.col-md-offset-3 {
+    margin: 0 auto;
+    float: none;
+  }
+
+  form {
+    padding: 35px 20px;
+  }
+
+  .fh5co-heading h2 {
+    font-size: 28px;
+  }
+
+  .fh5co-heading p {
+    font-size: 16px;
+  }
+
+  #fh5co-logo img {
+    height: 45px;
+  }
+
+  .fh5co-nav a {
+    margin: 0 5px;
+  }
+}
+
+/* ============================
+   NAVBAR MODERNA
+============================ */
+.fh5co-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 15px 0;
+  top: 0;
+}
+
+.fh5co-nav.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  padding: 10px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#fh5co-logo img {
+  height: 55px;
+  transition: transform 0.3s;
+}
+
+#fh5co-logo img:hover {
+  transform: scale(1.05);
+}
+
+.menu-1 {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-1 li {
+  margin-left: 25px;
+}
+
+.menu-1 li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu-1 li a:hover,
+.menu-1 li.active a {
+  background: #2575fc;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ============================
+   MENU RESPONSIVE (MÓVIL)
+============================ */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-1 {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    border-radius: 8px;
+    padding: 15px 0;
+  }
+
+  .menu-1 li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-1.active {
+    display: flex;
+  }
+}
+
