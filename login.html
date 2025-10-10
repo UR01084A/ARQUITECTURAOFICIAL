@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-body">
+
+  <div class="login-container">
+    <h2 class="active-tab">Inicia sesión</h2>
+
+    <form id="login-" class="login-form">
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Correo o usuario" required>
+      </div>
+
+      <div class="password-group">
+  <input type="password" id="password" placeholder="Contraseña" required>
+  <span class="toggle-password">👁️</span>
+  <br>
+</div>
+
+
+      <p class="forgot">
+        <a href="#" id="forgot-link">¿Has olvidado tu contraseña?</a>
+      </p>
+
+      <button type="submit" class="login-btn">Iniciar sesión</button>
+      <p id="error-msg" class="error-msg"></p>
+
+      <hr class="divider">
+
+      <p class="social-text">Acceso rápido con</p>
+      <div class="social-icons">
+        <button type="button" class="social-btn fb">f</button>
+        <button type="button" class="social-btn google">G</button>
+        <button type="button" class="social-btn twitter">t</button>
+        <button type="button" class="social-btn apple"></button>
+      </div>
+    </form>
+
+    <!-- 🔹 Botón para volver al inicio -->
+    <a href="index.html" class="back-btn">← Volver al inicio</a>
+  </div>
+
+  <script type="module" src="js/login.js"></script>
+  <script src="js/ui-login.js"></script>
+</body>
+</html>

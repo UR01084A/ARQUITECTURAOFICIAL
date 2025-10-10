@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Día/Noche Realista</title>
+  <link rel="stylesheet" href="css/menuIndex.css">
+  <link rel="stylesheet" href="css/contenidoIndex.css">
+  <link rel="stylesheet" href="css/footerIndex.css">
+   <link rel="stylesheet" href="css/trayectoria.css">
+</head>
+<body class="day">
+  <!-- Fondo de video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video de fondo.
+  </video>
+
+  <!-- NAV (NO SE TOCA) -->
+  <div id="page">
+    <nav id="navbar" class="fh5co-nav">
+      <div class="container nav-wrap">
+        <div id="logo">
+          <a href="index.html" aria-label="Inicio">
+            <img src="imagenes/logo.png" alt="Logo UPLA">
+          </a>
+        </div>
+
+        <ul id="primary-menu" class="nav-links">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
+          <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="sobreMi.html" class="nav-link">Sobre mí</a></li>
+          <li><a href="contact.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+<!-- CONTENIDO TRAYECTORIA MODERNO -->
+  <section class="trayectoria-container">
+    <h1>Mi Trayectoria Profesional</h1>
+    <p>Resumen de mi formación académica, experiencia laboral y habilidades.</p>
+
+    <div class="trayectoria-cards">
+      <!-- Educación -->
+      <div class="card fade-in">
+        <h2>Educación</h2>
+        <p>Licenciatura en Ingeniería de Sistemas y Computación</p>
+        <div class="level-bar">
+          <span>Universidad</span>
+          <div class="level">
+            <div class="level-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experiencia laboral -->
+      <div class="card fade-in">
+        <h2>Experiencia Laboral</h2>
+        <p>Desarrollo de sistemas y gestión de proyectos</p>
+        <div class="level-bar">
+          <span>Proyectos</span>
+          <div class="level">
+            <div class="level-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="card fade-in">
+        <h2>Habilidades</h2>
+        <div class="level-bar">
+          <span>Inglés Básico</span>
+          <div class="level"><div class="level-fill" style="width: 40%;"></div></div>
+        </div>
+        <div class="level-bar">
+          <span>Excel</span>
+          <div class="level"><div class="level-fill" style="width: 70%;"></div></div>
+        </div>
+        <div class="level-bar">
+          <span>PowerPoint</span>
+          <div class="level"><div class="level-fill" style="width: 60%;"></div></div>
+        </div>
+        <div class="level-bar">
+          <span>Programación</span>
+          <div class="level"><div class="level-fill" style="width: 85%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+ <script src="js/trayectoria.js"></script>
+  <script src="js/menuIndex.js"></script>
+  <script src="js/skills.js"></script>
+</body>
+</html>

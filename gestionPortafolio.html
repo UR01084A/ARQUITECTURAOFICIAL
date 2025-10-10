@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión Portafolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/menuIndex.css">
+  <link rel="stylesheet" href="css/contenidoIndex.css">
+  <link rel="stylesheet" href="css/footerIndex.css">
+  <link rel="stylesheet" href="css/gestionPortafolio.css">
+
+  <!-- Librerías PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.14.305/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.14.305/pdf.worker.min.js';
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="day">
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video de fondo.
+  </video>
+
+  <!-- NAVBAR MODERNO (NO TOCADO) -->
+  <nav id="navbar" class="fh5co-nav">
+    <div class="container nav-wrap">
+      <div id="logo">
+        <a href="index.html" aria-label="Inicio">
+          <img src="imagenes/logo.png" alt="Logo UPLA">
+        </a>
+      </div>
+      <ul id="primary-menu" class="nav-links">
+        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+        <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
+        <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+        <li><a href="sobreMi.html" class="nav-link">Sobre mí</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
+        <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTENEDOR PORTAFOLIO -->
+  <div class="portfolio-manager">
+
+    <!-- BIENVENIDA -->
+    <div class="container welcome-panel">
+      <h2>Bienvenido, <span id="username"></span></h2>
+      <button id="logout-btn" class="btn-secondary">Cerrar sesión</button>
+    </div>
+
+    <!-- CURSOS -->
+    <section id="course-management" class="panel container">
+      <h3>Cursos</h3>
+      <div class="actions">
+        <button id="add-course-btn" class="btn-accent"><i class="fas fa-plus"></i> Agregar curso</button>
+      </div>
+      <div id="courses-list" class="cards-grid"></div>
+    </section>
+
+    <!-- SEMANAS -->
+    <section id="week-management" class="panel container" style="display:none">
+      <h3 id="course-title"></h3>
+      <div class="actions">
+        <button id="add-week-btn" class="btn-accent"><i class="fas fa-plus"></i> Agregar semana</button>
+        <button id="back-to-courses-btn" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver a cursos</button>
+      </div>
+      <div id="weeks-list" class="cards-grid"></div>
+    </section>
+
+    <!-- ARCHIVOS -->
+    <section id="files-management" class="panel container" style="display:none">
+      <h3 id="week-title"></h3>
+      <div class="actions">
+        <input type="file" id="file-input" multiple>
+        <button id="upload-file-btn" class="btn-accent"><i class="fas fa-upload"></i> Subir archivo</button>
+        <button id="back-to-weeks-btn" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver a semanas</button>
+      </div>
+      <div id="files-list" class="cards-grid"></div>
+    </section>
+
+    <!-- MODAL DE PREVISUALIZACIÓN -->
+    <div id="fileModal">
+      <div id="modal-window">
+        <div id="modal-header">
+          <h4 id="modal-title"></h4>
+          <div class="modal-actions">
+            <button id="modal-minimize" class="btn-secondary">_</button>
+            <button id="modal-maximize" class="btn-secondary">🗖</button>
+            <button id="modal-download" class="btn-accent"><i class="fas fa-download"></i></button>
+            <button id="modal-close" class="btn-delete"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+  </div> <!-- FIN PORTFOLIO-MANAGER -->
+
+  <!-- Scripts -->
+  <script>
+    // Mostrar username
+    document.getElementById('username').textContent = localStorage.getItem('username') || 'Usuario';
+  </script>
+  <script src="js/menuIndex.js"></script>
+  <script type="module" src="js/gestionPortafolio.js"></script>
+</body>
+</html>

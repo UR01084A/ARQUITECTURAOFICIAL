@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="css/menuIndex.css">
+  <link rel="stylesheet" href="css/contenidoIndex.css">
+  <link rel="stylesheet" href="css/footerIndex.css">
+  <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body class="day">
+  <!-- Fondo de video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video de fondo.
+  </video>
+
+  <!-- NAV (igual que tu index) -->
+  <div id="page">
+    <nav id="navbar" class="fh5co-nav">
+      <div class="container nav-wrap">
+        <div id="logo">
+          <a href="index.html" aria-label="Inicio">
+            <img src="imagenes/logo.png" alt="Logo UPLA">
+          </a>
+        </div>
+
+        <ul id="primary-menu" class="nav-links">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
+          <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="sobreMi.html" class="nav-link">Sobre mí</a></li>
+          <li><a href="contact.html" class="nav-link active">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- CONTENIDO DE CONTACTO -->
+  <div class="contact-container">
+    <h1>Contáctanos</h1>
+    <p>Si tienes dudas, sugerencias o quieres colaborar, completa el siguiente formulario:</p>
+
+    <form id="contact-form">
+      <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+      <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+      <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+      <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+      <button type="submit" class="contact-btn">Enviar mensaje</button>
+    </form>
+  </div>
+
+  <script src="js/menuIndex.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* ===========================
+   CONTENEDOR TRAYECTORIA
+=========================== */
+.trayectoria-container {
+  max-width: 1000px;
+  margin: 120px auto 50px auto;
+  padding: 50px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* TITULOS */
+.trayectoria-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.trayectoria-container p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+/* TARJETAS */
+.trayectoria-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 300px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* EFECTO HOVER */
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ===========================
+   BARRAS DE HABILIDAD
+=========================== */
+.level-bar {
+  margin: 15px 0;
+}
+
+.level-bar span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.level {
+  background: rgba(0,0,0,0.1);
+  height: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.level-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00aaff, #0077aa);
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+/* ANIMACIÓN AL HACER SCROLL */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   MODO DÍA
+=========================== */
+body.day .trayectoria-container {
+  background: rgba(255,255,255,0.18);
+}
+
+body.day .trayectoria-container h1 {
+  color: #005f99;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+body.day .trayectoria-container p {
+  color: #222;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+}
+
+body.day .card {
+  background: rgba(255,255,255,0.25);
+  color: #000;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* ===========================
+   MODO NOCHE
+=========================== */
+body.night .trayectoria-container {
+  background: rgba(0,0,0,0.5);
+}
+
+body.night .trayectoria-container h1 {
+  color: #00d4ff;
+  text-shadow: 0 0 12px rgba(0,212,255,0.7);
+}
+
+body.night .trayectoria-container p {
+  color: #cce7ff;
+}
+
+body.night .card {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media screen and (max-width: 768px) {
+  .trayectoria-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .trayectoria-container {
+    margin: 80px 20px 40px 20px;
+    padding: 30px 20px;
+  }
+}

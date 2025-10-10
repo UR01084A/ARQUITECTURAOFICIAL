@@ -1,0 +1,260 @@
+/* ===========================
+   CONTENEDOR DE CONTACTO
+=========================== */
+.contact-container {
+  max-width: 500px;
+  margin: 100px auto 50px auto;
+  padding: 50px 35px;
+  border-radius: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   TÍTULOS Y TEXTO
+=========================== */
+.contact-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-container p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* ===========================
+   CAMPOS DEL FORMULARIO
+=========================== */
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+#contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.5;
+}
+
+/* PLACEHOLDER */
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+  transition: color 0.3s ease;
+}
+
+/* ===========================
+   BOTÓN ENVIAR
+=========================== */
+.contact-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   MODO DÍA MEJORADO
+=========================== */
+body.day .contact-container {
+  background: rgba(255, 255, 255, 0.18);
+  color: #000;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+body.day .contact-container h1 {
+  color: #005f99;
+  text-shadow: 0 0 10px rgba(0,95,153,0.5);
+}
+
+body.day .contact-container p {
+  color: #222;
+}
+
+body.day #contact-form input,
+body.day #contact-form textarea {
+  background: rgba(255,255,255,0.3);
+  color: #000;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+body.day #contact-form input::placeholder,
+body.day #contact-form textarea::placeholder {
+  color: rgba(0,0,0,0.6);
+}
+
+body.day #contact-form input:focus,
+body.day #contact-form textarea:focus {
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 15px rgba(0,95,153,0.6);
+}
+
+body.day .contact-btn {
+  background: linear-gradient(135deg, #0077aa, #004f77);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,95,153,0.5);
+}
+
+body.day .contact-btn:hover {
+  background: linear-gradient(135deg, #0099cc, #006080);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(0,95,153,0.6);
+}
+
+/* ===========================
+   MODO NOCHE
+=========================== */
+body.night .contact-container {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+body.night .contact-container h1 {
+  color: #00d4ff;
+  text-shadow: 0 0 12px rgba(0,212,255,0.7);
+}
+
+body.night .contact-container p {
+  color: #cce7ff;
+}
+
+body.night #contact-form input,
+body.night #contact-form textarea {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body.night #contact-form input::placeholder,
+body.night #contact-form textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+body.night #contact-form input:focus,
+body.night #contact-form textarea:focus {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 12px rgba(0,212,255,0.7);
+}
+
+body.night .contact-btn {
+  background: linear-gradient(135deg, #00d4ff, #006bbd);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,212,255,0.4);
+}
+
+body.night .contact-btn:hover {
+  background: linear-gradient(135deg, #00f0ff, #0080d0);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,212,255,0.6);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media screen and (max-width: 600px) {
+  .contact-container {
+    margin: 50px 20px;
+    padding: 40px 20px;
+  }
+}
+
+/* ===========================
+   MODO DÍA MEJORADO CON SOMBRA
+=========================== */
+body.day .contact-container {
+  background: rgba(255, 255, 255, 0.18); /* ligeramente oscuro para destacar */
+  color: #000;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+body.day .contact-container h1 {
+  color: #005f99; /* azul más oscuro */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* sombra para resaltar */
+}
+
+body.day .contact-container p {
+  color: #222;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* sombra ligera para mejorar legibilidad */
+}
+
+body.day #contact-form input,
+body.day #contact-form textarea {
+  background: rgba(255,255,255,0.3);
+  color: #000;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+body.day #contact-form input::placeholder,
+body.day #contact-form textarea::placeholder {
+  color: rgba(0,0,0,0.6);
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.3); /* sombra sutil para placeholders */
+}
+
+body.day #contact-form input:focus,
+body.day #contact-form textarea:focus {
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 15px rgba(0,95,153,0.6);
+}
+
+body.day .contact-btn {
+  background: linear-gradient(135deg, #0077aa, #004f77);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,95,153,0.5);
+}
+
+body.day .contact-btn:hover {
+  background: linear-gradient(135deg, #0099cc, #006080);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(0,95,153,0.6);
+}
+
+/* ===========================
+   MODO DÍA CON CAMPOS BLANCOS
+=========================== */
+body.day .contact-container {
+  background: rgba(255, 255, 255, 0.418); /* fondo del contenedor ligeramente transparente */
+  color: #000;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+body.day .contact-container h1 {
+  color: #f4f9fb; /* azul oscuro */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.951);
+}
+
+body.day .contact-container p {
+  color: #222;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+body.day #contact-form input,
+body.day #contact-form textarea {
+  background: #fff; /* campos completamente blancos */
+  color: #000;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  border-radius: 12px;
+}

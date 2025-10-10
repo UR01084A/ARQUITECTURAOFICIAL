@@ -1,0 +1,294 @@
+/* ===========================
+   ESTILO GENERAL DEL LOGIN
+=========================== */
+body.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  margin: 0;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+.login-container {
+  width: 360px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 45px 35px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+}
+
+.login-container h1 {
+  font-size: 1.9rem;
+  color: #00aaff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+}
+
+/* ===========================
+   CAMPOS DE ENTRADA
+=========================== */
+.login-container input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+}
+
+/* ===========================
+   BOTÓN DE LOGIN
+=========================== */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #00aaff, #0077aa);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #0099cc, #005f88);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+  transform: scale(1.03);
+}
+
+/* ===========================
+   MENSAJES DE ERROR
+=========================== */
+.error-msg {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  min-height: 18px;
+}
+
+/* ===========================
+   SEPARADOR
+=========================== */
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.separator span {
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   BOTÓN DE GOOGLE
+=========================== */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #555;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+}
+
+.google-btn:hover {
+  background: #f5f5f5;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transform: scale(1.02);
+}
+
+.google-btn .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* ===========================
+   BOTONES DE ACCESO RÁPIDO (SOCIALES) - MODERNOS
+=========================== */
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.social-btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.social-btn span {
+  display: inline-block;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.fb { background: linear-gradient(135deg, #4c69ba, #3b5998); }
+.google { background: linear-gradient(135deg, #e74c3c, #db4437); }
+.twitter { background: linear-gradient(135deg, #1da1f2, #0d95e8); }
+.apple { background: linear-gradient(135deg, #333, #000); }
+
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.social-btn:hover img {
+  transform: scale(1.1);
+}
+
+.social-btn:hover span {
+  transform: translateX(3px);
+}
+
+.social-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg) translateX(-100%);
+  transition: all 0.5s ease;
+}
+
+.social-btn:hover::after {
+  transform: rotate(45deg) translateX(100%);
+}
+
+/* ===========================
+   BOTÓN VOLVER AL INICIO
+=========================== */
+.back-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(0, 170, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+  transform: scale(1.05);
+}
+
+
+.password-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center; /* Centrado vertical perfecto */
+}
+
+.password-group input {
+  width: 100%;
+  padding: 12px 40px 12px 14px; /* Espacio a la derecha para el ojito */
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.password-group input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+}
+
+/* OJITO centrado */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center; /* Centrado vertical exacto */
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  color: #00aaff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: #66d9ff;
+}

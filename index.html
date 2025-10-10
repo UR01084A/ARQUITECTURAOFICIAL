@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Día/Noche Realista</title>
+  <link rel="stylesheet" href="css/menuIndex.css">
+  <link rel="stylesheet" href="css/contenidoIndex.css">
+  <link rel="stylesheet" href="css/footerIndex.css">
+</head>
+<body class="day">
+  <!-- Fondo de video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video de fondo.
+  </video>
+
+  <!-- NAV (NO SE TOCA) -->
+  <div id="page">
+    <nav id="navbar" class="fh5co-nav">
+      <div class="container nav-wrap">
+        <div id="logo">
+          <a href="index.html" aria-label="Inicio">
+            <img src="imagenes/logo.png" alt="Logo UPLA">
+          </a>
+        </div>
+
+        <ul id="primary-menu" class="nav-links">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
+          <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="sobreMi.html" class="nav-link">Sobre mí</a></li>
+          <li><a href="contact.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div id="main-content">
+    <!-- HERO -->
+<header id="fh5co-header" class="fh5co-cover" role="banner">
+  <div class="text-content">
+
+  <div class="hero-inner">
+    <!-- Texto -->
+    <div >
+      <h1>¡¡¡ BIENVENIDOS A MI PORTAFOLIO !!!</h1>
+<h2 class="subheading">
+  Hola, soy <strong>William Mario Lázaro Iguavel</strong>, estudiante de <strong>Ingeniería de Sistemas y Computación</strong>. 
+  Apasionado por la tecnología y el desarrollo de soluciones digitales innovadoras.
+</h2>
+
+<p>
+  Me especializo en desarrollo web, diseño de sistemas y optimización de procesos, creando experiencias intuitivas y eficientes. Siempre busco aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.
+</p>
+
+<p>
+  <a href="sobreMi.html" class="btn btn-primary btn-gradient">Conóceme más</a>
+  <a href="portafolio.html" class="btn btn-ghost">Ver proyectos</a>
+</p>
+
+    </div>
+    
+
+<div  class="hero-visual">
+  <div class="photo-frame">
+    <img src="imagenes/Foto.jpg" alt="Foto de William" class="mi-foto">
+    <div class="extra-border"></div>
+  </div>
+  </div>
+ 
+</div>
+
+
+
+</div>
+
+  </div>
+</header>
+
+
+    <!-- INTRO -->
+    <section id="fh5co-intro"  class="section with-overlay"class="section">
+      <div class="container">
+        <div class="row justify-center" data-aos="fade-up">
+          <div class="col-10 text-center">
+            <h2>Explora mi sitio</h2>
+            <p class="lead">Diseño, desarrollo y soluciones — proyectos reales con impacto. Navega, conoce y contacta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS + TRAYECTORIA -->
+    <section id="fh5co-skills" class="section with-overlay">
+      <div class="container">
+        <div class="two-columns" data-aos="fade-up">
+          <!-- Columna habilidades -->
+          <div class="column">
+            <h3>Habilidades</h3>
+
+            <div class="skill">
+              <div class="skill-title">Frontend (HTML/CSS/JS)</div>
+              <div class="skill-bar"><div class="skill-fill frontend"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-title">Backend (Node/PHP)</div>
+              <div class="skill-bar"><div class="skill-fill backend"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-title">Bases de datos</div>
+              <div class="skill-bar"><div class="skill-fill bd"></div></div>
+            </div>
+          </div>
+
+          <!-- Columna trayectoria -->
+          <div class="column">
+            <h3>Trayectoria (línea de tiempo)</h3>
+            <ol class="timeline">
+              <li><strong>2023</strong><span> Inicio proyectos universitarios</span></li>
+              <li><strong>2024</strong><span> Desarrollo de prototipos y CRUD en la nube</span></li>
+              <li><strong>2025</strong><span> Portafolio profesional y prácticas</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section id="fh5co-portfolio" class="section">
+      <div class="fh5co-cover"class="container">
+        <h2>Proyectos destacados</h2>
+        <div class="portfolio-grid">
+          <!-- Flip 1 -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Proyecto 1</h3>
+                <p>Portafolio _ 2025</p>
+              </div>
+              <div class="flip-back">
+                <p>Creación de Web Dinámica</p>
+                <a href="portafolio.html">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip 2 -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Proyecto 2</h3>
+                <p>...............................</p>
+              </div>
+              <div class="flip-back">
+                <p>..............................</p>
+                <a href="portafolio.html">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip 3 -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Proyecto 3</h3>
+                <p>..............................</p>
+              </div>
+              <div class="flip-back">
+                <p>...................................</p>
+                <a href="portafolio.html">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="fh5co-footer" class="section" role="contentinfo">
+      <div class="container text-center">
+        <p>&copy; 2025 • William Mario Lazaro Iguavel — Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/menuIndex.js"></script>
+  <script src="js/skills.js"></script>
+</body>
+</html>

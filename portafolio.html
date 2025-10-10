@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/menuIndex.css" /> <!-- NO TOCAR -->
+  <link rel="stylesheet" href="css/contenidoIndex.css" />
+  <link rel="stylesheet" href="css/footerIndex.css" />
+  <link rel="stylesheet" href="css/gestionPortafolio.css" />
+<link rel="stylesheet" href="css/portafolio.css" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+
+<body class="day">
+  <!-- Fondo de video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/fondo.mp4" type="video/mp4" />
+    Tu navegador no soporta video de fondo.
+  </video>
+
+  <!-- NAV (NO SE TOCA) -->
+  <div id="page">
+    <nav id="navbar" class="fh5co-nav">
+      <div class="container nav-wrap">
+        <div id="logo">
+          <a href="index.html" aria-label="Inicio">
+            <img src="imagenes/logo.png" alt="Logo UPLA" />
+          </a>
+        </div>
+
+        <ul id="primary-menu" class="nav-links">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
+          <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="sobreMi.html" class="nav-link">Sobre mí</a></li>
+          <li><a href="contact.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+          <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HEADER -->
+  <header class="portfolio-header">
+    <div class="">
+      <h1 class="">📚 Portafolio</h1>
+      <p class="+">
+        Explora los cursos, semanas y archivos disponibles
+      </p>
+    </div>
+  </header>
+
+  <!-- CURSOS -->
+  <section id="course-display" class="portfolio-section">
+    <div class="portfolio-container">
+      <h2 class="portfolio-heading">Cursos</h2>
+      <div id="courses-list" class="portfolio-card-container">
+        <div class="portfolio-card">
+          <h3>Metodología de Desarrollo de Software</h3>
+          <p>Explora los contenidos semanales de este curso.</p>
+          <button class="portfolio-back-btn">Ver semanas</button>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Base de Datos II</h3>
+          <p>Consulta los laboratorios y prácticas resueltas.</p>
+          <button class="portfolio-back-btn">Ver semanas</button>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Ingeniería de Requerimientos</h3>
+          <p>Revisa las actividades del curso.</p>
+          <button class="portfolio-back-btn">Ver semanas</button>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Redes y Comunicaciones</h3>
+          <p>Analiza la topología y protocolos usados.</p>
+          <button class="portfolio-back-btn">Ver semanas</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="week-display" style="display:none;">
+  <div id="week-container">
+    <h2 class="portfolio-heading">
+      Semanas del Curso: <span id="course-title"></span>
+    </h2>
+    <button id="back-to-courses-btn" class="portfolio-back-btn">
+      Volver a Cursos
+    </button>
+    <div id="weeks-list"></div>
+  </div>
+</section>
+
+
+  <!-- ARCHIVOS -->
+  <section id="files-display" class="portfolio-section" style="display:none;">
+    <div class="portfolio-container">
+      <h2 class="portfolio-heading">
+        Archivos de la Semana: <span id="week-title"></span>
+      </h2>
+      <button id="back-to-weeks-btn" class="portfolio-back-btn">
+        Volver a Semanas
+      </button>
+      <div id="files-list" class="portfolio-card-container"></div>
+    </div>
+  </section>
+
+<!-- Modal -->
+  <div id="fileModal">
+    <div id="modal-window">
+      <div id="modal-header">
+        <span id="modal-title">Archivo</span>
+        <div id="modal-controls">
+          <button id="modal-download">⬇</button>
+          <button id="modal-minimize">➖</button>
+          <button id="modal-maximize">⛶</button>
+          <button id="modal-close">✖</button>
+        </div>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/portafolio.js" type="module"></script>
+  <script src="js/gestionPortafolio.js" type="module"></script>
+  <script src="js/menuIndex.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

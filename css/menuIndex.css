@@ -1,0 +1,106 @@
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 1s ease, color 1s ease;
+  overflow-x: hidden;
+}
+
+/* Fondo de video */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* Navbar */
+#navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(4, 94, 92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.8s ease, color 0.8s ease;
+}
+
+.nav-wrap { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0.7rem 2rem; 
+}
+
+#logo img { height: 45px; }
+
+.nav-links { 
+  list-style: none; 
+  display: flex; 
+  gap: 1.5rem; 
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+/* Efecto hover: cambia color y añade subrayado animado */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00c3ff; /* Color de acento */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00c3ff; /* Cambia color en hover */
+}
+
+.nav-link:hover::af
+
+
+.nav-link:hover { color: #2575fc; }
+
+.btn-login { 
+  padding: 0.4rem 1rem; 
+  border-radius: 20px; 
+  color: #fff; 
+  background: linear-gradient(135deg,#ff6a00,#ee0979); 
+  transition: all 0.3s ease; 
+}
+
+.theme-btn { 
+  border: none; 
+  background: transparent; 
+  cursor: pointer; 
+  font-size: 1.2rem; 
+}
+
+/* Estilos especiales en modo noche */
+body.night #navbar {
+  background: rgba(20,20,40,0.85);
+}
+
+body.night .nav-link { color: #e0e0ff; }
+body.night .btn-login { background: linear-gradient(135deg,#43e97b,#38f9d7); }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Día/Noche Realista</title>
+  <link rel="stylesheet" href="css/menuIndex.css">
+  <link rel="stylesheet" href="css/contenidoIndex.css">
+  <link rel="stylesheet" href="css/footerIndex.css">
+  <link rel="stylesheet" href="css/gestionPortafolio.css">
+<link rel="stylesheet" href="css/portafolio.css">
+
+
+
+</head>
+<body class="day">
+  <!-- Fondo de video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video de fondo.
+  </video>
+
+  <!-- NAV (NO SE TOCA) -->
+  <div id="page">
+    <nav id="navbar" class="fh5co-nav">
+      <div class="container nav-wrap">
+        <div id="logo">
+          <a href="index.html" aria-label="Inicio">
+            <img src="imagenes/logo.png" alt="Logo UPLA">
+          </a>
+        </div>
+
+        <ul id="primary-menu" class="nav-links">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
+          <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+          <li><a href="sobreMi.html" class="nav-link">Sobre mí</a></li>
+          <li><a href="contact.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+  <!-- PORTAFOLIO HEADER -->
+  <header class="portfolio-header">
+    <div class="portfolio-container portfolio-text-center">
+      <h1 class="portfolio-title">📚 Portafolio</h1>
+      <p class="portfolio-subtitle">Explora los cursos, semanas y archivos disponibles</p>
+    </div>
+  </header>
+
+  <!-- CURSOS -->
+  <section id="course-display" class="portfolio-section">
+    <div class="portfolio-container">
+      <h2 class="portfolio-heading">Cursos</h2>
+      <div id="courses-list" class="portfolio-card-container"></div>
+    </div>
+  </section>
+
+  <!-- SEMANAS -->
+  <section id="week-display" class="portfolio-section" style="display:none;">
+    <div class="portfolio-container">
+      <h2 class="portfolio-heading">Semanas del Curso: <span id="course-title"></span></h2>
+      <button id="back-to-courses-btn" class="portfolio-back-btn">Volver a Cursos</button>
+      <div id="weeks-list" class="portfolio-card-container"></div>
+    </div>
+  </section>
+
+  <!-- ARCHIVOS -->
+  <section id="files-display" class="portfolio-section" style="display:none;">
+    <div class="portfolio-container">
+      <h2 class="portfolio-heading">Archivos de la Semana: <span id="week-title"></span></h2>
+      <button id="back-to-weeks-btn" class="portfolio-back-btn">Volver a Semanas</button>
+      <div id="files-list" class="portfolio-card-container"></div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="fileModal" class="portfolio-modal">
+    <div class="portfolio-modal-window">
+      <div class="portfolio-modal-header">
+        <span id="modal-title">Archivo</span>
+        <div class="portfolio-modal-controls">
+          <button id="modal-minimize" class="portfolio-modal-btn">🗕</button>
+          <button id="modal-maximize" class="portfolio-modal-btn">🗖</button>
+          <button id="modal-download" class="portfolio-modal-btn">⬇</button>
+          <button id="modal-close" class="portfolio-modal-btn">✖</button>
+        </div>
+      </div>
+      <div id="modal-body" class="portfolio-modal-body"></div>
+    </div>
+  </div>
+
+
+  
+
+  <script src="js/menuIndex.js"></script>
+  <script src="js/skills.js"></script>
+</body>
+</html>
