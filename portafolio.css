@@ -1,0 +1,255 @@
+/* ============================= */
+/* 🎨 VARIABLES DE DISEÑO */
+:root {
+  /* Fondos */
+  --bg-body: #f4f7fb;
+  --bg-card: #ffffff;
+  --bg-section-cursos: #0000007f;
+  --bg-section-semanas: #00000071;
+  --bg-section-archivos: #000000a7;
+
+  /* Textos */
+  --text-primary: #1a1a1a;
+  --text-secondary: #5c5c5c;
+
+  /* Colores de acento */
+  --accent: #007bff;
+  --accent-dark: #0056d6;
+
+  /* Bordes, sombras y transición */
+  --radius: 16px;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ============================= */
+/* 🌙 MODO OSCURO (sólo con CSS) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #0b1320;
+    --bg-card: #16213e;
+    --bg-section-cursos: #1a2233;
+    --bg-section-semanas: #1c3322;
+    --bg-section-archivos: #33221a;
+    --text-primary: #f1f1f1;
+    --text-secondary: #cfcfcf;
+    --accent: #00c6ff;
+    --accent-dark: #007bff;
+  }
+}
+
+/* ============================= */
+/* 🌐 ESTILOS GENERALES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+/* ============================= */
+/* 🧭 ESPACIO PARA EL MENU */
+#page {
+  padding-top: 80px; /* Deja espacio para el menú fijo */
+}
+
+/* ============================= */
+/* 🧭 HEADER PORTAFOLIO */
+.portfolio-header {
+  text-align: center;
+  margin: 3rem auto 2rem;
+}
+
+.portfolio-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* ============================= */
+/* 🏗️ SECCIONES CON FONDO */
+#course-display {
+  background: var(--bg-section-cursos);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+}
+
+#week-display {
+  background: var(--bg-section-semanas);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+}
+
+#files-display {
+  background: var(--bg-section-archivos);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+}
+
+/* ============================= */
+/* 📚 TITULOS DE SECCIÓN */
+.portfolio-section .portfolio-heading {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.portfolio-section .portfolio-heading::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* ============================= */
+/* 🧩 GRID DE TARJETAS */
+.portfolio-card-container,
+#weeks-list,
+#files-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* ============================= */
+/* 💼 TARJETAS */
+.portfolio-card,
+.week-card,
+.file-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition);
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.portfolio-card:hover,
+.week-card:hover,
+.file-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* 🖼️ IMAGEN EN TARJETAS */
+.portfolio-card img,
+.file-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* 📘 TEXTO */
+.portfolio-card h3,
+.week-card h4,
+.file-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: var(--text-primary);
+}
+
+.portfolio-card p,
+.week-card p,
+.file-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 1rem 1.2rem;
+}
+
+/* 🔘 BOTONES “VOLVER” */
+.portfolio-back-btn {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: auto;
+  max-width: 200px;
+  margin: 1.5rem auto 0;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.portfolio-back-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE */
+@media (max-width: 1200px) {
+  .portfolio-card-container,
+  #weeks-list,
+  #files-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-card-container,
+  #weeks-list,
+  #files-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-card-container,
+  #weeks-list,
+  #files-list {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-container {
+    padding: 1rem;
+  }
+
+  .portfolio-back-btn {
+    width: 90%;
+  }
+
+  .portfolio-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ============================= */
+/* 🔧 ACCESIBILIDAD */
+.portfolio-back-btn:focus,
+.portfolio-card:focus,
+.week-card:focus,
+.file-card:focus {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
+}
