@@ -9,21 +9,24 @@
   --bg-section-archivos: #000000a7;
 
   /* Textos */
-  --text-primary: #1a1a1a;
-  --text-secondary: #5c5c5c;
+  --text-primary: #fff6f6;
+  --text-secondary: #fffefe;
+  --text-heading: #ffffff;
+  --text-link: #8cf7f5;
 
   /* Colores de acento */
-  --accent: #007bff;
-  --accent-dark: #0056d6;
+  --accent: #089289;
+  --accent-dark: #000000;
 
   /* Bordes, sombras y transición */
   --radius: 16px;
-  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --shadow: 0 12px 30px rgba(123, 248, 236, 0.499);
+  --shadow-hover: 0 16px 40px rgb(113, 246, 255);
   --transition: all 0.3s ease-in-out;
 }
 
 /* ============================= */
-/* 🌙 MODO OSCURO (sólo con CSS) */
+/* 🌙 MODO OSCURO */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-body: #0b1320;
@@ -31,10 +34,17 @@
     --bg-section-cursos: #1a2233;
     --bg-section-semanas: #1c3322;
     --bg-section-archivos: #33221a;
-    --text-primary: #f1f1f1;
-    --text-secondary: #cfcfcf;
+
+    --text-primary: #eaeaea;
+    --text-secondary: #bfbfbf;
+    --text-heading: #00c6ff;
+    --text-link: #00c6ff;
+
     --accent: #00c6ff;
     --accent-dark: #007bff;
+
+    --shadow: 0 12px 30px rgb(50, 176, 75);
+    --shadow-hover: 0 16px 40px rgb(181, 41, 41);
   }
 }
 
@@ -50,9 +60,35 @@ body {
 }
 
 /* ============================= */
+/* 🌟 ESTILO DE TEXTO PORTAFOLIO GLOBAL (excluyendo menú completo) */
+body :is(h1, h2, h3, h4, h5, h6, p, span, a, button):not(#navbar, #navbar *) {
+  color: var(--text-primary);
+  text-shadow: 
+    1px 1px 0 rgb(0, 0, 0),
+   -1px 1px 0 rgb(0, 0, 0),
+    1px -1px 0 rgb(0, 0, 0),
+   -1px -1px 0 rgb(0, 0, 0),
+    0 2px 6px rgb(0, 0, 0);
+  transition: var(--transition);
+}
+
+/* 🌙 MODO OSCURO - TEXTO ILUMINADO (excluyendo menú completo) */
+@media (prefers-color-scheme: dark) {
+  body :is(h1, h2, h3, h4, h5, h6, p, span, a, button):not(#navbar, #navbar *) {
+    color: var(--text-primary);
+    text-shadow: 
+       1px 1px 0 rgb(0, 0, 0),
+      -1px 1px 0 rgb(11, 5, 5),
+       1px -1px 0 rgb(0, 0, 0),
+      -1px -1px 0 rgb(0, 0, 0),
+       0 2px 6px rgb(0, 0, 0);
+  }
+}
+
+/* ============================= */
 /* 🧭 ESPACIO PARA EL MENU */
 #page {
-  padding-top: 80px; /* Deja espacio para el menú fijo */
+  padding-top: 80px;
 }
 
 /* ============================= */
@@ -65,7 +101,6 @@ body {
 .portfolio-header h1 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
@@ -101,7 +136,6 @@ body {
 /* 📚 TITULOS DE SECCIÓN */
 .portfolio-section .portfolio-heading {
   font-size: 2rem;
-  color: var(--accent);
   font-weight: 600;
   margin-bottom: 2rem;
   position: relative;
@@ -126,7 +160,7 @@ body {
 #weeks-list,
 #files-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   justify-items: center;
   align-items: stretch;
@@ -146,7 +180,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: var(--transition);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   width: 100%;
   max-width: 100%;
   cursor: pointer;
@@ -156,8 +190,8 @@ body {
 .portfolio-card:hover,
 .week-card:hover,
 .file-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: var(--shadow-hover);
 }
 
 /* 🖼️ IMAGEN EN TARJETAS */
@@ -166,26 +200,42 @@ body {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-/* 📘 TEXTO */
+.portfolio-card:hover img,
+.file-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 📘 TEXTO EN TARJETAS */
 .portfolio-card h3,
 .week-card h4,
 .file-card h4 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 1rem 0 0.5rem;
-  color: var(--text-primary);
 }
 
 .portfolio-card p,
 .week-card p,
 .file-card p {
   font-size: 0.95rem;
-  color: var(--text-secondary);
   margin: 0 1rem 1.2rem;
 }
 
+/* ============================= */
+/* 🔗 LINKS */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-dark);
+}
+
+/* ============================= */
 /* 🔘 BOTONES “VOLVER” */
 .portfolio-back-btn {
   background-color: var(--accent);
@@ -199,11 +249,14 @@ body {
   max-width: 200px;
   margin: 1.5rem auto 0;
   display: inline-block;
-  transition: var(--transition);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
 .portfolio-back-btn:hover {
   background-color: var(--accent-dark);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-hover);
 }
 
 /* ============================= */
