@@ -7,7 +7,125 @@
   <link rel="stylesheet" href="css/menuIndex.css">
   <link rel="stylesheet" href="css/contenidoIndex.css">
   <link rel="stylesheet" href="css/footerIndex.css">
+
+  <style>
+    /* ============================= */
+    /* ESTILOS RESPONSIVE Y MENÚ     */
+    /* ============================= */
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Botón hamburguesa (oculto por defecto) */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ================== TABLET ================== */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+      }
+      .mi-foto {
+        width: 260px;
+      }
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    /* ================== CELULAR ================== */
+    @media (max-width: 768px) {
+      /* Botón hamburguesa visible */
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        z-index: 1001;
+      }
+
+      /* Ocultar el menú por defecto */
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.85);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 10px;
+        text-align: right;
+      }
+
+      /* Mostrar menú cuando está activo */
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+      .hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .mi-foto {
+        width: 200px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ================== CELULAR PEQUEÑO ================== */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .subheading {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      .mi-foto {
+        width: 160px;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
+
 <body class="day">
   <!-- Fondo de video -->
   <video autoplay muted loop id="bg-video">
@@ -15,7 +133,7 @@
     Tu navegador no soporta video de fondo.
   </video>
 
-  <!-- NAV (NO SE TOCA) -->
+  <!-- NAV -->
   <div id="page">
     <nav id="navbar" class="fh5co-nav">
       <div class="container nav-wrap">
@@ -25,16 +143,16 @@
           </a>
         </div>
 
+        <!-- Botón menú hamburguesa -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
         <ul id="primary-menu" class="nav-links">
           <li><a href="index.html" class="nav-link active">Inicio</a></li>
           <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
           <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
-         
           <li><a href="contact.html" class="nav-link">Contacto</a></li>
           <li><a href="login.html" class="btn-login">Login</a></li>
-          <li>
-            <button id="theme-toggle" class="theme-btn">🌙</button>
-          </li>
+          <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
         </ul>
       </div>
     </nav>
@@ -42,103 +160,74 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <div id="main-content">
-    <!-- HERO -->
-<header id="fh5co-header" class="fh5co-cover" role="banner">
-  <div class="text-content">
+    <header id="fh5co-header" class="fh5co-cover" role="banner">
+      <div class="text-content">
+        <div class="hero-inner">
+          <div>
+            <h1>¡¡¡ BIENVENIDOS A MI PORTAFOLIO !!!</h1>
+            <h2 class="subheading">
+              Hola, soy <strong>William Mario Lázaro Iguavel</strong>, estudiante de <strong>Ingeniería de Sistemas y Computación</strong>. 
+              Apasionado por la tecnología y el desarrollo de soluciones digitales innovadoras.
+            </h2>
+            <p>
+              Me especializo en desarrollo web, diseño de sistemas y optimización de procesos, creando experiencias intuitivas y eficientes. Siempre busco aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.
+            </p>
+            <p><a href="portafolio.html" class="btn btn-ghost">Ver proyectos</a></p>
+          </div>
 
-  <div class="hero-inner">
-    <!-- Texto -->
-    <div >
-      <h1>¡¡¡ BIENVENIDOS A MI PORTAFOLIO !!!</h1>
-<h2 class="subheading">
-  Hola, soy <strong>William Mario Lázaro Iguavel</strong>, estudiante de <strong>Ingeniería de Sistemas y Computación</strong>. 
-  Apasionado por la tecnología y el desarrollo de soluciones digitales innovadoras.
-</h2>
-
-<p>
-  Me especializo en desarrollo web, diseño de sistemas y optimización de procesos, creando experiencias intuitivas y eficientes. Siempre busco aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.
-</p>
-
-<p>
-  <a href="sobreMi.html" class="btn btn-primary btn-gradient">Conóceme más</a>
-  <a href="portafolio.html" class="btn btn-ghost">Ver proyectos</a>
-</p>
-
-    </div>
-    
-
-<div  class="hero-visual">
-  <div class="photo-frame">
-    <img src="imagenes/Foto.jpg" alt="Foto de William" class="mi-foto">
-    <div class="extra-border"></div>
-  </div>
-  </div>
- 
-</div>
-
-
-
-</div>
-
-  </div>
-</header>
-
-
-    <!-- INTRO -->
-    <section id="fh5co-intro"  class="section with-overlay"class="section">
-      <div class="container">
-        <div class="row justify-center" data-aos="fade-up">
-          <div class="col-10 text-center">
-            <h2>Explora mi sitio</h2>
-            <p class="lead">Diseño, desarrollo y soluciones — proyectos reales con impacto. Navega, conoce y contacta.</p>
+          <div class="hero-visual">
+            <div class="photo-frame">
+              <img src="imagenes/Foto.jpg" alt="Foto de William" class="mi-foto">
+              <div class="extra-border"></div>
+            </div>
           </div>
         </div>
       </div>
+    </header>
+
+    <!-- INTRO -->
+    <section id="fh5co-intro" class="section with-overlay">
+      <div class="container text-center">
+        <h2>Explora mi sitio</h2>
+        <p class="lead">Diseño, desarrollo y soluciones — proyectos reales con impacto. Navega, conoce y contacta.</p>
+      </div>
     </section>
 
-    <!-- SKILLS + TRAYECTORIA -->
+    <!-- SKILLS -->
     <section id="fh5co-skills" class="section with-overlay">
-      <div class="container">
-        <div class="two-columns" data-aos="fade-up">
-          <!-- Columna habilidades -->
-          <div class="column">
-            <h3>Habilidades</h3>
-
-            <div class="skill">
-              <div class="skill-title">Frontend (HTML/CSS/JS)</div>
-              <div class="skill-bar"><div class="skill-fill frontend"></div></div>
-            </div>
-
-            <div class="skill">
-              <div class="skill-title">Backend (Node/PHP)</div>
-              <div class="skill-bar"><div class="skill-fill backend"></div></div>
-            </div>
-
-            <div class="skill">
-              <div class="skill-title">Bases de datos</div>
-              <div class="skill-bar"><div class="skill-fill bd"></div></div>
-            </div>
+      <div class="container two-columns">
+        <div class="column">
+          <h3>Habilidades</h3>
+          <div class="skill">
+            <div class="skill-title">Frontend (HTML/CSS/JS)</div>
+            <div class="skill-bar"><div class="skill-fill frontend"></div></div>
           </div>
-
-          <!-- Columna trayectoria -->
-          <div class="column">
-            <h3>Trayectoria (línea de tiempo)</h3>
-            <ol class="timeline">
-              <li><strong>2023</strong><span> Inicio proyectos universitarios</span></li>
-              <li><strong>2024</strong><span> Desarrollo de prototipos y CRUD en la nube</span></li>
-              <li><strong>2025</strong><span> Portafolio profesional y prácticas</span></li>
-            </ol>
+          <div class="skill">
+            <div class="skill-title">Backend (Node/PHP)</div>
+            <div class="skill-bar"><div class="skill-fill backend"></div></div>
           </div>
+          <div class="skill">
+            <div class="skill-title">Bases de datos</div>
+            <div class="skill-bar"><div class="skill-fill bd"></div></div>
+          </div>
+        </div>
+
+        <div class="column">
+          <h3>Trayectoria (línea de tiempo)</h3>
+          <ol class="timeline">
+            <li><strong>2023</strong><span> Inicio proyectos universitarios</span></li>
+            <li><strong>2024</strong><span> Desarrollo de prototipos y CRUD en la nube</span></li>
+            <li><strong>2025</strong><span> Portafolio profesional y prácticas</span></li>
+          </ol>
         </div>
       </div>
     </section>
 
     <!-- PORTAFOLIO -->
     <section id="fh5co-portfolio" class="section">
-      <div class="fh5co-cover"class="container">
+      <div class="container">
         <h2>Proyectos destacados</h2>
         <div class="portfolio-grid">
-          <!-- Flip 1 -->
           <div class="flip-card">
             <div class="flip-inner">
               <div class="flip-front">
@@ -151,8 +240,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Flip 2 -->
           <div class="flip-card">
             <div class="flip-inner">
               <div class="flip-front">
@@ -165,8 +252,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Flip 3 -->
           <div class="flip-card">
             <div class="flip-inner">
               <div class="flip-front">
@@ -193,6 +278,15 @@
 
   <script src="js/menuIndex.js"></script>
   <script src="js/skills.js"></script>
+
+  <script>
+    // Lógica para menú hamburguesa
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
-
