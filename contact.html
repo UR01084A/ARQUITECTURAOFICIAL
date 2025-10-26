@@ -4,11 +4,267 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto</title>
+
+  <!-- Tus hojas de estilo originales -->
   <link rel="stylesheet" href="css/menuIndex.css">
   <link rel="stylesheet" href="css/contenidoIndex.css">
   <link rel="stylesheet" href="css/footerIndex.css">
   <link rel="stylesheet" href="css/contacto.css">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===========================
+       FONDO DE VIDEO
+    =========================== */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* ===========================
+       NAVBAR RESPONSIVE
+    =========================== */
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 18px;
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .menu-icon span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    /* Animación icono */
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Pantallas pequeñas */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: rgba(4, 94, 92, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: 1000;
+      }
+
+      #menu-toggle:checked ~ .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .nav-link {
+        font-size: 1.2rem;
+      }
+
+      .btn-login {
+        padding: 0.6rem 1.5rem;
+      }
+    }
+
+    /* ===========================
+       SECCIÓN CONTACTO
+    =========================== */
+    .contact-container {
+      padding: 8rem 2rem 4rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      color: #fff;
+    }
+
+    .contact-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-container p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      resize: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #555;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    .contact-btn {
+      background: linear-gradient(135deg, #00c3ff, #0078ff);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: linear-gradient(135deg, #0090ff, #0044cc);
+      transform: scale(1.03);
+    }
+
+    /* Ajustes responsive formulario */
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 6rem 1rem 3rem;
+      }
+
+      .contact-container h1 {
+        font-size: 2rem;
+      }
+
+      .contact-container p {
+        font-size: 1rem;
+      }
+
+      form {
+        padding: 1.5rem;
+      }
+    }
+
+    /* ===========================
+       MENSAJE DE CONFIRMACIÓN
+    =========================== */
+    .confirm-message {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .confirm-content {
+      background: #ffffff;
+      color: #222;
+      padding: 25px 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 350px;
+      animation: fadeIn 0.3s ease-out;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .confirm-content h2 {
+      color: #0078ff;
+      margin-bottom: 10px;
+    }
+
+    .confirm-content p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .confirm-content button {
+      background-color: #0078ff;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .confirm-content button:hover {
+      background-color: #005fcc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Ajuste modal en pantallas pequeñas */
+    @media (max-width: 500px) {
+      .confirm-content {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .confirm-content h2 {
+        font-size: 1.2rem;
+      }
+
+      .confirm-content p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
+
 <body class="day">
   <!-- Fondo de video -->
   <video autoplay muted loop id="bg-video">
@@ -16,7 +272,7 @@
     Tu navegador no soporta video de fondo.
   </video>
 
-  <!-- NAV (igual que tu index) -->
+  <!-- NAV -->
   <div id="page">
     <nav id="navbar" class="fh5co-nav">
       <div class="container nav-wrap">
@@ -26,16 +282,21 @@
           </a>
         </div>
 
+        <!-- 🔹 Menú hamburguesa responsive sin JS -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         <ul id="primary-menu" class="nav-links">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
           <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
           <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
-        
           <li><a href="contact.html" class="nav-link active">Contacto</a></li>
           <li><a href="login.html" class="btn-login">Login</a></li>
-          <li>
-            <button id="theme-toggle" class="theme-btn">🌙</button>
-          </li>
+          <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
         </ul>
       </div>
     </nav>
@@ -55,9 +316,35 @@
     </form>
   </div>
 
+  <!-- MENSAJE DE CONFIRMACIÓN -->
+  <div id="confirm-message" class="confirm-message">
+    <div class="confirm-content">
+      <h2>✅ ¡Mensaje enviado!</h2>
+      <p>Gracias por contactarnos. Te responderemos lo antes posible.</p>
+      <button id="close-confirm">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="js/menuIndex.js"></script>
   <script src="js/skills.js"></script>
   <script src="js/contacto.js"></script>
+
+  <script>
+    // === Confirmación de envío ===
+    const form = document.getElementById('contact-form');
+    const confirmBox = document.getElementById('confirm-message');
+    const closeBtn = document.getElementById('close-confirm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      confirmBox.style.display = 'flex';
+      form.reset();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      confirmBox.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
-
