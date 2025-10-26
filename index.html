@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Día/Noche Realista</title>
+  <title>Portafolio - William Mario Lázaro Iguavel</title>
+
+  <!-- Estilos originales -->
   <link rel="stylesheet" href="css/menuIndex.css">
   <link rel="stylesheet" href="css/contenidoIndex.css">
   <link rel="stylesheet" href="css/footerIndex.css">
 
+  <!-- Mejoras responsive (sin alterar tu diseño original) -->
   <style>
-    /* ============================= */
-    /* ESTILOS RESPONSIVE Y MENÚ     */
-    /* ============================= */
-
-    body, html {
+    /* ============================
+       AJUSTES BASE
+    ============================ */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html, body {
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     #bg-video {
@@ -29,105 +36,154 @@
       z-index: -1;
     }
 
-    /* Botón hamburguesa (oculto por defecto) */
+    nav {
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Botón menú (hamburguesa) oculto por defecto */
     .menu-toggle {
       display: none;
-      font-size: 1.8rem;
-      color: white;
+      font-size: 2rem;
       background: none;
       border: none;
+      color: white;
       cursor: pointer;
     }
 
-    /* ================== TABLET ================== */
+    /* ============================
+       MEDIA QUERIES RESPONSIVE
+    ============================ */
+
+    /* --- TABLET --- */
     @media (max-width: 1024px) {
       .hero-inner {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        gap: 20px;
+        padding: 50px 20px;
+      }
+
+      .hero-visual {
+        order: -1;
+        margin-bottom: 20px;
+      }
+
+      .photo-frame {
+        margin: 0 auto;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
       }
-      .mi-foto {
-        width: 260px;
-      }
-      .portfolio-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      #primary-menu {
+        gap: 15px;
       }
     }
 
-    /* ================== CELULAR ================== */
+    /* --- CELULAR --- */
     @media (max-width: 768px) {
-      /* Botón hamburguesa visible */
       .menu-toggle {
         display: block;
         position: absolute;
         top: 18px;
-        right: 20px;
-        z-index: 1001;
+        right: 25px;
       }
 
-      /* Ocultar el menú por defecto */
       .nav-links {
         display: none;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.85);
+        background: rgba(0, 0, 30, 0.95);
         position: absolute;
         top: 70px;
         right: 0;
-        width: 200px;
+        width: 220px;
+        border-radius: 0 0 0 15px;
         padding: 20px;
-        border-radius: 0 0 0 10px;
         text-align: right;
       }
 
-      /* Mostrar menú cuando está activo */
       .nav-links.active {
         display: flex;
+        animation: slideIn 0.3s ease;
       }
 
-      .nav-links li {
-        margin: 10px 0;
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       .hero-inner {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 20px;
+        padding: 40px 15px;
+        gap: 30px;
+      }
+
+      .hero-inner h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+      }
+
+      .subheading {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .hero-inner p {
+        font-size: 0.9rem;
       }
 
       .mi-foto {
-        width: 200px;
+        width: 240px;
       }
 
       .portfolio-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
       }
     }
 
-    /* ================== CELULAR PEQUEÑO ================== */
+    /* --- CELULAR PEQUEÑO --- */
     @media (max-width: 480px) {
-      header h1 {
+      .hero-inner h1 {
         font-size: 1.4rem;
+        padding: 0 10px;
       }
+
       .subheading {
         font-size: 0.9rem;
-        line-height: 1.4;
+        line-height: 1.5;
+        padding: 0 10px;
       }
+
+      .hero-inner p {
+        font-size: 0.85rem;
+        padding: 0 10px;
+      }
+
       .mi-foto {
-        width: 160px;
+        width: 180px;
       }
+
       .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
         padding: 10px;
+      }
+
+      .btn-login {
+        font-size: 0.85rem;
+        padding: 6px 12px;
       }
     }
   </style>
 </head>
 
 <body class="day">
-  <!-- Fondo de video -->
+  <!-- Video de fondo -->
   <video autoplay muted loop id="bg-video">
     <source src="videos/fondo.mp4" type="video/mp4">
     Tu navegador no soporta video de fondo.
@@ -143,7 +199,7 @@
           </a>
         </div>
 
-        <!-- Botón menú hamburguesa -->
+        <!-- Botón hamburguesa -->
         <button class="menu-toggle" id="menu-toggle">☰</button>
 
         <ul id="primary-menu" class="nav-links">
@@ -160,21 +216,27 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <div id="main-content">
+    <!-- HERO -->
     <header id="fh5co-header" class="fh5co-cover" role="banner">
       <div class="text-content">
         <div class="hero-inner">
+          <!-- Texto principal -->
           <div>
             <h1>¡¡¡ BIENVENIDOS A MI PORTAFOLIO !!!</h1>
             <h2 class="subheading">
-              Hola, soy <strong>William Mario Lázaro Iguavel</strong>, estudiante de <strong>Ingeniería de Sistemas y Computación</strong>. 
+              Hola, soy <strong>William Mario Lázaro Iguavel</strong>, estudiante de 
+              <strong>Ingeniería de Sistemas y Computación</strong>. 
               Apasionado por la tecnología y el desarrollo de soluciones digitales innovadoras.
             </h2>
             <p>
-              Me especializo en desarrollo web, diseño de sistemas y optimización de procesos, creando experiencias intuitivas y eficientes. Siempre busco aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.
+              Me especializo en desarrollo web, diseño de sistemas y optimización de procesos, 
+              creando experiencias intuitivas y eficientes. Siempre busco aprender nuevas 
+              tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.
             </p>
             <p><a href="portafolio.html" class="btn btn-ghost">Ver proyectos</a></p>
           </div>
 
+          <!-- Foto -->
           <div class="hero-visual">
             <div class="photo-frame">
               <img src="imagenes/Foto.jpg" alt="Foto de William" class="mi-foto">
@@ -231,36 +293,32 @@
           <div class="flip-card">
             <div class="flip-inner">
               <div class="flip-front">
-                <h3>Proyecto 1</h3>
-                <p>Portafolio _ 2025</p>
+                <h3>Proyecto 1</h3><p>Portafolio _ 2025</p>
               </div>
               <div class="flip-back">
-                <p>Creación de Web Dinámica</p>
-                <a href="portafolio.html">Ver más</a>
+                <p>Creación de Web Dinámica</p><a href="portafolio.html">Ver más</a>
               </div>
             </div>
           </div>
+
           <div class="flip-card">
             <div class="flip-inner">
               <div class="flip-front">
-                <h3>Proyecto 2</h3>
-                <p>...............................</p>
+                <h3>Proyecto 2</h3><p>...............................</p>
               </div>
               <div class="flip-back">
-                <p>..............................</p>
-                <a href="portafolio.html">Ver más</a>
+                <p>..............................</p><a href="portafolio.html">Ver más</a>
               </div>
             </div>
           </div>
+
           <div class="flip-card">
             <div class="flip-inner">
               <div class="flip-front">
-                <h3>Proyecto 3</h3>
-                <p>..............................</p>
+                <h3>Proyecto 3</h3><p>..............................</p>
               </div>
               <div class="flip-back">
-                <p>...................................</p>
-                <a href="portafolio.html">Ver más</a>
+                <p>...................................</p><a href="portafolio.html">Ver más</a>
               </div>
             </div>
           </div>
@@ -276,14 +334,14 @@
     </footer>
   </div>
 
+  <!-- Scripts originales -->
   <script src="js/menuIndex.js"></script>
   <script src="js/skills.js"></script>
 
+  <!-- JS menú responsive -->
   <script>
-    // Lógica para menú hamburguesa
     const toggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
     });
