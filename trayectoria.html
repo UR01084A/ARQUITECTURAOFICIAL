@@ -3,12 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Día/Noche Realista</title>
+  <title>Trayectoria Profesional</title>
+
+  <!-- Tus hojas de estilo originales -->
   <link rel="stylesheet" href="css/menuIndex.css">
   <link rel="stylesheet" href="css/contenidoIndex.css">
   <link rel="stylesheet" href="css/footerIndex.css">
-   <link rel="stylesheet" href="css/trayectoria.css">
+  <link rel="stylesheet" href="css/trayectoria.css">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===========================
+       AJUSTES RESPONSIVE ADICIONALES
+       (No alteran tu diseño ni scripts)
+    =========================== */
+
+    /* --- NAVBAR --- */
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .menu-icon span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Animación de apertura */
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Estilos responsive para el navbar */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-wrap {
+        padding: 0.8rem 1.5rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: rgba(4, 94, 92, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: 1000;
+      }
+
+      #menu-toggle:checked ~ .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .nav-link {
+        font-size: 1.2rem;
+      }
+
+      .btn-login {
+        padding: 0.6rem 1.5rem;
+      }
+    }
+
+    /* --- SECCIÓN TRAYECTORIA --- */
+    .trayectoria-container {
+      padding: 8rem 2rem 4rem;
+      color: white;
+      text-align: center;
+    }
+
+    .trayectoria-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h2 {
+      color: #00c3ff;
+      margin-bottom: 1rem;
+    }
+
+    .level-bar {
+      margin-bottom: 1rem;
+    }
+
+    .level {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      height: 10px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+
+    .level-fill {
+      background: linear-gradient(90deg, #00c3ff, #0078ff);
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .trayectoria-container h1 {
+        font-size: 1.8rem;
+      }
+
+      .trayectoria-container p {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body class="day">
   <!-- Fondo de video -->
   <video autoplay muted loop id="bg-video">
@@ -16,7 +174,7 @@
     Tu navegador no soporta video de fondo.
   </video>
 
-  <!-- NAV (NO SE TOCA) -->
+  <!-- NAV (manteniendo funcionalidad original) -->
   <div id="page">
     <nav id="navbar" class="fh5co-nav">
       <div class="container nav-wrap">
@@ -26,25 +184,27 @@
           </a>
         </div>
 
+        <!-- 🔹 Añadido: menú hamburguesa sin alterar funcionalidad -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         <ul id="primary-menu" class="nav-links">
           <li><a href="index.html" class="nav-link active">Inicio</a></li>
           <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
           <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
-         
           <li><a href="contact.html" class="nav-link">Contacto</a></li>
           <li><a href="login.html" class="btn-login">Login</a></li>
-          <li>
-            <button id="theme-toggle" class="theme-btn">🌙</button>
-          </li>
+          <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
         </ul>
       </div>
     </nav>
   </div>
 
-
-
-
-<!-- CONTENIDO TRAYECTORIA MODERNO -->
+  <!-- CONTENIDO TRAYECTORIA -->
   <section class="trayectoria-container">
     <h1>Mi Trayectoria Profesional</h1>
     <p>Resumen de mi formación académica, experiencia laboral y habilidades.</p>
@@ -97,10 +257,9 @@
     </div>
   </section>
 
-  
- <script src="js/trayectoria.js"></script>
+  <!-- Scripts originales -->
+  <script src="js/trayectoria.js"></script>
   <script src="js/menuIndex.js"></script>
   <script src="js/skills.js"></script>
 </body>
-
 </html>
