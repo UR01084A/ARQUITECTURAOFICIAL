@@ -10,16 +10,131 @@
   <link rel="stylesheet" href="css/contenidoIndex.css" />
   <link rel="stylesheet" href="css/footerIndex.css" />
   <link rel="stylesheet" href="css/gestionPortafolio.css" />
-<link rel="stylesheet" href="css/portafolio.css" />
+  <link rel="stylesheet" href="css/portafolio.css" />
+
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- ✅ Estilos responsive sin modificar tu diseño -->
+  <style>
+    /* ======== NAV RESPONSIVE ======== */
+    #menu-toggle {
+      display: none;
+    }
 
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      cursor: pointer;
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      z-index: 1100;
+    }
 
+    .menu-icon span {
+      height: 3px;
+      width: 100%;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: 999;
+      }
+
+      #menu-toggle:checked ~ .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .nav-link {
+        color: white;
+        font-size: 1.3rem;
+      }
+
+      .btn-login {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.5rem;
+      }
+    }
+
+    /* ======== SECCIONES ======== */
+    @media (max-width: 1024px) {
+      .portfolio-card-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-header {
+        padding-top: 6rem;
+      }
+
+      .portfolio-card-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .portfolio-card {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .portfolio-header h1 {
+        font-size: 2rem;
+      }
+
+      .portfolio-header p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-card h3 {
+        font-size: 1.1rem;
+      }
+      .portfolio-card p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="day">
@@ -39,11 +154,18 @@
           </a>
         </div>
 
+        <!-- ✅ Botón hamburguesa (no altera diseño) -->
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         <ul id="primary-menu" class="nav-links">
           <li><a href="index.html" class="nav-link active">Inicio</a></li>
           <li><a href="trayectoria.html" class="nav-link">Trayectoria</a></li>
           <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
-          
           <li><a href="contact.html" class="nav-link">Contacto</a></li>
           <li><a href="login.html" class="btn-login">Login</a></li>
           <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
@@ -54,12 +176,8 @@
 
   <!-- HEADER -->
   <header class="portfolio-header">
-    <div class="">
-      <h1 class="">📚 Portafolio</h1>
-      <p class="+">
-        Explora los cursos, semanas y archivos disponibles
-      </p>
-    </div>
+    <h1>📚 Portafolio</h1>
+    <p>Explora los cursos, semanas y archivos disponibles</p>
   </header>
 
   <!-- CURSOS -->
@@ -68,44 +186,42 @@
       <h2 class="portfolio-heading">Cursos</h2>
       <div id="courses-list" class="portfolio-card-container">
         <div class="portfolio-card">
-          <h3>Metodología de Desarrollo de Software</h3>
+          <h3>Arquitectura de Software</h3>
           <p>Explora los contenidos semanales de este curso.</p>
-          <button class="portfolio-back-btn">Ver semanas</button>
+          <button class="portfolio-back-btn">Ver Semanas</button>
         </div>
 
         <div class="portfolio-card">
-          <h3>Base de Datos II</h3>
+          <h3>Inglés</h3>
           <p>Consulta los laboratorios y prácticas resueltas.</p>
-          <button class="portfolio-back-btn">Ver semanas</button>
+          <button class="portfolio-back-btn">Ver Semanas</button>
         </div>
 
         <div class="portfolio-card">
-          <h3>Ingeniería de Requerimientos</h3>
+          <h3>Programación</h3>
           <p>Revisa las actividades del curso.</p>
-          <button class="portfolio-back-btn">Ver semanas</button>
+          <button class="portfolio-back-btn">Ver Semanas</button>
         </div>
 
         <div class="portfolio-card">
-          <h3>Redes y Comunicaciones</h3>
+          <h3>Curso de Ana</h3>
           <p>Analiza la topología y protocolos usados.</p>
-          <button class="portfolio-back-btn">Ver semanas</button>
+          <button class="portfolio-back-btn">Ver Semanas</button>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SEMANAS -->
   <section id="week-display" style="display:none;">
-  <div id="week-container">
-    <h2 class="portfolio-heading">
-      Semanas del Curso: <span id="course-title"></span>
-    </h2>
-    <button id="back-to-courses-btn" class="portfolio-back-btn">
-      Volver a Cursos
-    </button>
-    <div id="weeks-list"></div>
-  </div>
-</section>
-
+    <div id="week-container">
+      <h2 class="portfolio-heading">
+        Semanas del Curso: <span id="course-title"></span>
+      </h2>
+      <button id="back-to-courses-btn" class="portfolio-back-btn">Volver a Cursos</button>
+      <div id="weeks-list"></div>
+    </div>
+  </section>
 
   <!-- ARCHIVOS -->
   <section id="files-display" class="portfolio-section" style="display:none;">
@@ -113,14 +229,12 @@
       <h2 class="portfolio-heading">
         Archivos de la Semana: <span id="week-title"></span>
       </h2>
-      <button id="back-to-weeks-btn" class="portfolio-back-btn">
-        Volver a Semanas
-      </button>
+      <button id="back-to-weeks-btn" class="portfolio-back-btn">Volver a Semanas</button>
       <div id="files-list" class="portfolio-card-container"></div>
     </div>
   </section>
 
-<!-- Modal -->
+  <!-- MODAL -->
   <div id="fileModal">
     <div id="modal-window">
       <div id="modal-header">
@@ -143,4 +257,3 @@
   <script src="js/login.js"></script>
 </body>
 </html>
-
