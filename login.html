@@ -5,38 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesión</title>
   <link rel="stylesheet" href="css/login.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ====== Contenedor principal ====== */
+    .login-container {
+      background: rgba(18, 32, 47, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      padding: 45px 40px;
+      width: 380px;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-container h2 {
+      margin-bottom: 25px;
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #e6f1ff;
+      text-shadow: 0 0 10px rgba(66, 133, 244, 0.7);
+    }
+
+    /* ====== Campos ====== */
+    .input-group,
+    .password-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    input:focus {
+      border-color: #00bfa6;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 5px #00bfa6;
+    }
+
+    .password-group {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ====== Enlace olvidado ====== */
+    .forgot {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      font-size: 13px;
+      color: #00bfa6;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .forgot a:hover {
+      color: #33ffd5;
+    }
+
+    /* ====== Botón de inicio ====== */
+    .login-btn {
+      background: linear-gradient(90deg, #00bfa6, #4285F4);
+      border: none;
+      color: #fff;
+      border-radius: 10px;
+      width: 100%;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      margin-top: 5px;
+      transition: all 0.3s;
+    }
+
+    .login-btn:hover {
+      background: linear-gradient(90deg, #00e0c0, #5a9ff8);
+      box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4);
+      transform: translateY(-2px);
+    }
+
+    hr.divider {
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 30px 0 20px;
+    }
+
+    /* ====== Texto de acceso rápido ====== */
+    .social-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* ====== Botón Google ====== */
+    .social-btn.google {
+      background: #DB4437;
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      width: 100%;
+      padding: 12px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .social-btn.google:hover {
+      background: #e85c4a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(219, 68, 55, 0.4);
+    }
+
+    .google-logo {
+      width: 22px;
+      height: 22px;
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 2px;
+    }
+
+    /* ====== Enlace volver ====== */
+    .back-btn {
+      display: inline-block;
+      margin-top: 25px;
+      color: #00bfa6;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 8px 15px;
+      transition: all 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: rgba(0, 191, 166, 0.2);
+      color: #33ffd5;
+    }
+  </style>
 </head>
-<body class="login-body">
 
+<body>
   <div class="login-container">
-    <h2 class="active-tab">Inicia sesión</h2>
+    <h2>Inicia sesión</h2>
 
-    <form id="login-form" class="login-form">
+    <form id="login-form">
       <div class="input-group">
         <input type="text" id="username" placeholder="Correo o usuario" required>
       </div>
 
       <div class="password-group">
         <input type="password" id="password" placeholder="Contraseña" required>
-        <span class="toggle-password">👁️</span>
+        <span class="toggle-password"></span>
       </div>
 
-      <p class="forgot">
-        <a href="#" id="forgot-link">¿Has olvidado tu contraseña?</a>
-      </p>
+      <p class="forgot"><a href="#">¿Has olvidado tu contraseña?</a></p>
 
       <button type="submit" class="login-btn">Iniciar sesión</button>
-      <p id="error-msg" class="error-msg"></p>
 
       <hr class="divider">
 
       <p class="social-text">Acceso rápido con</p>
-      <div class="social-icons">
-        <button type="button" class="social-btn fb">f</button>
-        <button type="button" class="social-btn google">G</button>
-        <button type="button" class="social-btn twitter">t</button>
-        <button type="button" class="social-btn apple"></button>
-      </div>
+
+      <button type="button" class="social-btn google">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+             alt="Google Logo" class="google-logo">
+        Continuar con Google
+      </button>
     </form>
 
     <a href="index.html" class="back-btn">← Volver al inicio</a>
@@ -46,4 +223,5 @@
   <script src="js/ui-login.js"></script>
 </body>
 </html>
+
 
